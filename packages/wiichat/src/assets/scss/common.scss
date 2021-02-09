@@ -1,0 +1,323 @@
+@charset "UTF-8";
+
+/* https://zhuanlan.zhihu.com/p/39476410 */
+html, body, #app {
+  height: 100%;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: $color;
+}
+
+#nav {
+  padding: 30px;
+}
+
+a {
+  font-weight: bold;
+  color: #2c3e50;
+
+  &.router-link-exact-active {
+    color: #42b983;
+  }
+}
+
+.marginL15 {
+  margin-left: 15px;
+}
+
+.marginL30 {
+  margin-left: 30px;
+}
+
+.marginR15 {
+  margin-right: 15px;
+}
+
+.margin4 {
+  margin: 4px;
+}
+
+.margin8 {
+  margin: 8px;
+}
+
+.margin16 {
+  margin: 16px;
+}
+
+.marginB16 {
+  margin-bottom: 16px;
+}
+
+.padding16 {
+  padding: 16px;
+}
+
+.marginR8 {
+  margin-right: 8px;
+}
+
+.marginR16 {
+  margin-right: 16px;
+}
+
+.marginL8 {
+  margin-left: 8px;
+}
+
+.marginT15 {
+  margin-top: 15px;
+}
+
+.marginB15 {
+  margin-bottom: 15px;
+}
+
+.paddingT3 {
+  padding-top: 3px;
+}
+
+.padding8 {
+  padding: 8px;
+}
+
+.width360 {
+  width: 360px;
+}
+
+.fr {
+  float: right;
+}
+
+.gh-card-title {
+  line-height: 32px;
+}
+
+
+.width100 {
+  width: 100%;
+}
+
+.height100 {
+  height: 100%;
+}
+
+.height1px {
+  height: 1px;
+}
+
+.flex {
+  display: flex;
+
+  &1 {
+    flex: 1;
+  }
+
+  &2 {
+    flex: 2;
+  }
+
+  &3 {
+    flex: 3;
+  }
+
+  &4 {
+    flex: 4;
+  }
+
+  &5 {
+    flex: 5;
+  }
+
+  &.vertical {
+    flex-flow: column nowrap;
+  }
+
+  &.like-float {
+    flex-flow: row wrap;
+
+    .el-button + .el-button {
+      margin-left: 0;
+    }
+  }
+
+  &.between {
+    justify-content: space-between;
+  }
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.middle {
+    align-items: center;
+  }
+}
+
+.gutter16 {
+  height: 16px;
+}
+
+.grid {
+  display: grid;
+
+  &.col1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  &.col2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &.col3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &.col4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &.col5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  &.col11 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &.col12 {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  &.col211 {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  &.row45 {
+    grid-template-rows: 4fr 5fr;
+  }
+
+  &.gap16 {
+    grid-row-gap: 16px;
+    grid-column-gap: 16px;
+  }
+}
+
+.gap16 {
+  grid-row-gap: 16px; //上下
+  grid-column-gap: 16px; //左右
+}
+
+.gridcol1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.gridcol2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gridcol3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gridcol4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.gridcol5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+
+.hover-pointer {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.hover-grab {
+  &:hover {
+    cursor: grab;
+  }
+}
+
+.hover-scale1 {
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+/* message-box tips 说明 左边框蓝色 */
+.explain-tips {
+  padding: 8px 16px;
+  background-color: #ecf8ff;
+  border-radius: 4px;
+  border-left: 5px solid #50bfff;
+  margin: 20px 0;
+
+  > .p {
+    font-size: 14px;
+    color: #5e6d82;
+    line-height: 1.5em;
+  }
+}
+
+
+.color-red {
+  color: red;
+}
+
+
+.custom-tooltip-wrapper {
+  span {
+    font-size: 14px;
+  }
+
+  .custom-tooltip-marker {
+    display: inline-block;
+    margin-right: 5px;
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+  }
+
+  z-index: 2;
+  position: absolute;
+  white-space: nowrap;
+  transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s,
+  top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s;
+  background-color: rgba(50, 50, 50, 0.7);
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+  padding: 5px;
+  pointer-events: none;
+}
+
+.card-type1 {
+  display: flex;
+  flex-flow: column nowrap;
+
+  > .title {
+    padding: 0 16px;
+  }
+
+  > .body {
+    flex: 1;
+  }
+}
+
+
+.el-card.body-flex1 {
+  display: flex;
+  flex-flow: column nowrap;
+
+  > .el-card__body {
+    flex: 1;
+  }
+}
+
+
+

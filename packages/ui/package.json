@@ -1,0 +1,6 @@
+{
+  "name": "@ventose/ui",
+  "private": true,
+  "main": "src/index.jsx",
+  "version": "0.0.1"
+}

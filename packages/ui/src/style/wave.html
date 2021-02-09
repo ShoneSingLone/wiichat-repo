@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>按钮点击水波纹效果jquery</title>
+
+    <style type="text/css">
+        *,
+        *:after,
+        *:before {
+            box-sizing: border-box;
+        }
+
+        html {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: "Open Sans", "Arial", sans-serif;
+            text-rendering: optimizeSpeed;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .o-divider {
+            border: 0;
+            margin: 20px;
+            height: 1px;
+            background: #656D78;
+        }
+
+        .c-button {
+            -webkit-appearance: none;
+            position: relative;
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 0;
+            vertical-align: middle;
+            overflow: visible;
+            color: #fff;
+            font: inherit;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+            text-align: center;
+            letter-spacing: 1px;
+            background: transparent;
+            border: 0;
+            user-select: none;
+            box-shadow: 2px 2px 0 0 #383e46;
+            -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+            border-radius: 6px;
+        }
+
+        .c-button:hover,
+        .c-button:focus {
+            outline: 0;
+            text-decoration: none;
+        }
+
+        .c-button:not(:disabled) {
+            /*:not 为排除选择器，:not(:disabled)意思为排除disabled按钮的情况下*/
+            cursor: pointer;
+        }
+
+        .c-button--blue {
+            background: #FF8200;
+            text-shadow: 2px 2px 0 #333;
+            /*按钮文字效果*/
+        }
+
+        .c-button--blue:hover {
+            background: #FF8200;
+        }
+
+
+        .c-ripple {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: transparent;
+            border-radius: 6px;
+        }
+
+        .c-ripple__circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .c-ripple.is-active .c-ripple__circle {
+            animation: a-ripple .4s ease-in;
+        }
+
+
+        @keyframes a-ripple {
+            0% {
+                opacity: 0;
+            }
+
+            25% {
+                opacity: 1;
+            }
+
+            100% {
+                width: 200%;
+                padding-bottom: 200%;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="c-button c-button--blue" type="button" id="rytBTn">
+        <!-- 此div是水波纹盒子开始 -->
+        <div class="c-ripple js-ripple">
+            <span class="c-ripple__circle"></span>
+        </div>
+        <!-- 此div是水波纹盒子结束 -->
+        提交
+    </button>
+
+    <script type="text/javascript">
+        //逻辑思路：
+        // 1.html部分按钮内部设置一盒子c-ripple，盒子的子盒子是水波波纹c-ripple__circle
+        // 2.js 逻辑部分
+        //   2.1 点击button按钮的时候给水波波纹添加类名 is-active，is-active类名具有
+        //        添加动画animation  a-ripple的动画效果
+        //   2.2 监听Button盒子DOM元素的animationend事件（即动画结束事件）,当动画结束的
+        //       时候去掉类名 is-active
+        //  3.水波波纹根据点击位置而改动实现原理？
+        //    3.1 通过e.pageX ，e.pageY 获取点击的坐标值，拿点击的坐标值减去盒子的坐标值，即是水波纹相对于
+        //        父盒子c-ripple 的定位坐标位置
+        //  4.知识点梳理
+        //    4.1 原生js获取DOM元素，原生JS给DOM元素添加，移除类名，原生JS更改行内样式,css3 :not() 排除选择器
+
+        var rytBtn = document.getElementById('rytBTn')
+        rytBtn.onclick = function (e) {
+            var shuibo = document.getElementsByClassName('js-ripple')[0]; //获取水波DOM元素
+            var btnTop = shuibo.parentElement.offsetTop //按钮盒子距离浏览器窗口顶部距离
+            var btnLeft = shuibo.parentElement.offsetLeft //按钮距离浏览器盒子窗口左侧距离
+
+            var x = e.pageY - btnTop
+            var y = e.pageX - btnLeft
+
+            var bowen = document.getElementsByClassName('c-ripple__circle')[0]
+            bowen.style.top = x + 'px'
+            bowen.style.left = y + 'px'
+            shuibo.classList.add('is-active')
+        }
+        rytBtn.addEventListener('animationend', function () {
+            var shuibo = document.getElementsByClassName('js-ripple')[0]
+            shuibo.classList.remove('is-active')
+        })
+    </script>
+</body>
+
+</html>

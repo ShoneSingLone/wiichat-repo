@@ -1,0 +1,16 @@
+{
+  "name": "wiichat",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },
+  "npmClient":"cnpm",
+  "scripts": {
+    "bs": "lerna bootstrap",
+    "start": "lerna run start --scope=@ventose/wiichat",
+    "test:wiichat": "lerna run test:unit",
+    "test:demo": "lerna run test:unit --scope={@ventose/demo,@ventose/wiichat}",
+    "diff": "lerna diff",
+    "new-version":"lerna version --conventional-commits --yes"
+  }
+}
