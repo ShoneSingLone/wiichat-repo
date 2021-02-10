@@ -2,15 +2,19 @@
   "name": "wiichat",
   "private": true,
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.15.0",
+    "@typescript-eslint/parser": "^4.15.0",
+    "eslint": "^7.19.0",
+    "eslint-plugin-vue": "^7.5.0",
     "lerna": "^3.22.1"
   },
-  "npmClient":"cnpm",
+  "npmClient": "cnpm",
   "scripts": {
     "bs": "lerna bootstrap",
     "start": "lerna run start --scope=@ventose/wiichat",
     "test:wiichat": "lerna run test:unit",
     "test:demo": "lerna run test:unit --scope={@ventose/demo,@ventose/wiichat}",
     "diff": "lerna diff",
-    "new-version":"lerna version --conventional-commits --yes"
+    "new-version": "lerna version --conventional-commits --yes"
   }
 }

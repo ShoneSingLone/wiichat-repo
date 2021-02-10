@@ -1,27 +1,16 @@
-import _color from "./utils/colors";
-import './style/wave.css'
-export const color = _color;
-import './bs/scss/bootstrap.scss'
-import $ from "jquery"
+import './bs/scss/bootstrap.scss';
 import xBtn from "./components/button/index.vue";
-
-function watchClickRipple() {
-    if (watchClickRipple.done) return;
-    $('body').on('click', '.ripple', function (e) {
-        console.log(e, this, $(this));
-    })
-    watchClickRipple.done = true;
-}
+import xRipple, { installXRippleToBody } from "./components/Ripple/index.vue";
+import _color from "./utils/colors";
+export const color = _color;
 
 const componentList = [
-    xBtn
+    xBtn,
 ];
 
 export default {
     install: (app) => {
-        watchClickRipple();
-        watchClickRipple();
-        watchClickRipple();
+        installXRippleToBody(xRipple);
         componentList.forEach(component => app.component(component.name, component));
     }
 }
