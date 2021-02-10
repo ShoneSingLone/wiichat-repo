@@ -1,6 +1,10 @@
 {
   "name": "@ventose/ui",
   "private": true,
-  "main": "src/index.jsx",
-  "version": "0.0.1"
+  "main": "src/index.js",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "uuid": "^8.3.2"
+  }
 }

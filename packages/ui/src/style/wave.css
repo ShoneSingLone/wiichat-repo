@@ -4,12 +4,7 @@
     background-color: rgba(0, 0, 0, 0.15);
     background-clip: padding-box;
     pointer-events: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
-    -webkit-transform: scale(0);
-    -ms-transform: scale(0);
     transform: scale(0);
     opacity: 1;
 }
