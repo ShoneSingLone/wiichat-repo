@@ -15,9 +15,8 @@
 import { defineComponent, createApp } from "vue"
 import $ from "jquery"
 export const $body = $("body")
-
+export const idString = "x-relay-dom";
 export function ensureRelayDom() {
-  const idString = "x-relay-dom"
   const $rippleWrapper = $(`#${idString}`)
   if ($rippleWrapper?.length < 1) {
     $("<div/>", { id: idString }).css("display", "none").appendTo($body)
