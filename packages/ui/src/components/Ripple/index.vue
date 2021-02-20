@@ -12,50 +12,52 @@
 </template>
 
 <script>
-import { defineComponent, createApp } from "vue"
-import $ from "jquery"
-export const $body = $("body")
+import { defineComponent, createApp } from "vue";
+import $ from "jquery";
+export const $body = $("body");
 export const idString = "x-relay-dom";
 export function ensureRelayDom() {
-  const $rippleWrapper = $(`#${idString}`)
+  const $rippleWrapper = $(`#${idString}`);
   if ($rippleWrapper?.length < 1) {
-    $("<div/>", { id: idString }).css("display", "none").appendTo($body)
+    $("<div/>", { id: idString }).css("display", "none").appendTo($body);
   }
 }
 
 export function installXRippleToBody(xRipple) {
-  if (installXRippleToBody.done) return
-  $body.css("position", "relative")
-  ensureRelayDom()
-  createApp(xRipple).mount(`#${idString}`)
-  installXRippleToBody.done = true
+  if (installXRippleToBody.done) return;
+  $body.css("position", "relative");
+  ensureRelayDom();
+  createApp(xRipple).mount(`#${idString}`);
+  installXRippleToBody.done = true;
 }
 
 export function watchClickRipple(rippleVM) {
-  if (watchClickRipple.done) return
+  if (watchClickRipple.done) return;
   $body.on("click", ".ripple", function ($e) {
+    if ($e.currentTarget !== $e.target) return;
     /* 获取点击的dom 获取位置 获取rect */
     /* 添加先同位置相同大小的ripple元素 */
     /* ripple元素波纹效果 */
     /* 移除 */
-    const { clientX, clientY, pageX, pageY, offsetX, offsetY } = $e
-    const { width, height, top, left } = this.getBoundingClientRect()
+
+    const { clientX, clientY, pageX, pageY, offsetX, offsetY } = $e;
+    const { width, height, top, left } = this.getBoundingClientRect();
     rippleVM.rippleStyle = {
       top: `${pageY - clientY + top}px`,
       left: `${pageX - clientX + left}px`,
       width: `${width}px`,
       height: `${height}px`,
-    }
-    const length = width > height ? width : height
+    };
+    const length = width > height ? width : height;
     rippleVM.circleStyle = {
       top: `${offsetY - length / 2}px`,
       left: `${offsetX - length / 2}px`,
       width: `${length}px`,
       height: `${length}px`,
-    }
-    rippleVM.isShow = true
-  })
-  watchClickRipple.done = true
+    };
+    rippleVM.isShow = true;
+  });
+  watchClickRipple.done = true;
 }
 
 export default defineComponent({
@@ -65,17 +67,17 @@ export default defineComponent({
       isShow: false,
       circleStyle: {},
       rippleStyle: {},
-    }
+    };
   },
   mounted() {
-    watchClickRipple(this)
+    watchClickRipple(this);
   },
   methods: {
     handleAnimationend() {
-      this.isShow = false
+      this.isShow = false;
     },
   },
-})
+});
 </script>
 
 <style scoped>
@@ -95,7 +97,7 @@ export default defineComponent({
   height: 100%;
   transform: scale(0);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(180, 180, 180, 0.5);
 }
 
 .ripple.is-active .ripple__circle {
