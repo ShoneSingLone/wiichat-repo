@@ -15,5 +15,5 @@ deploy:
   keep_history: true
   on:
     branch: master
-  target_branch: deploy_test
+  target_branch: travis
   local_dir: packages/wiichat/dist
