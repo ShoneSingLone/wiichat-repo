@@ -2,7 +2,14 @@ import {
     createRouter,
     createWebHashHistory
 } from 'vue-router'
-import Home from '@/views/Home.vue'
+import Home from '@/views/Home.vue';
+const fs = require('fs');
+
+(async () => {
+    const res = await fs.promises().readdir("./");
+    console.log(fs.promises, res)
+})();
+
 
 const routes = [{
         path: '/',

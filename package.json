@@ -11,7 +11,8 @@
   "npmClient": "cnpm",
   "scripts": {
     "bs": "lerna bootstrap",
-    "start": "lerna run start --scope=@ventose/wiichat",
+    "dev": "lerna run start --scope=@ventose/wiichat",
+    "build": "lerna run build --scope=@ventose/wiichat",
     "test:wiichat": "lerna run test:unit",
     "test:demo": "lerna run test:unit --scope={@ventose/demo,@ventose/wiichat}",
     "diff": "lerna diff",
