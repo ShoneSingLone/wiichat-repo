@@ -11,7 +11,6 @@ Lerna 是一个管理工具，用于管理包含多个软件包（package）的 
 [How to Use Lerna](https://www.youtube.com/watch?v=p6qoJ4apCjA)
 [Commitizen](https://www.jianshu.com/p/d264f88d13a4)
 [用Lerna管理多包JS项目](https://zhuanlan.zhihu.com/p/33858131)
-[Lerna —— Monorepo 的最佳实践](https://cloud.tencent.com/developer/article/1467217)
 
 ## [入门](https://lernajs.bootcss.com/#getting-started)
 
@@ -30,7 +29,7 @@ lerna init
 - `npmClient`指定npm，国内可能比较有用，网络问题嘛......
 - `lerna version`发版本打标签直接送上remote/origin
 - `init -y init`注意`main`对应的文件
-- `lerna add @ventose/ui --scope=@ventose/wiichat` 类似 `yarn add`动态链接lib，不走仓库
+- `lerna add @ventose/ui --scope=@ventose/wiichat` 类似 `yarn add`动态链接lib，不走仓库 --scope即安装到 @ventose/wiichat
 - `lerna bootstrap`类似 `npm i`
 
 ```js

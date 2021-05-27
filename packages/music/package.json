@@ -1,6 +1,7 @@
 {
-  "name": "@ventose/music",
+  "name": "@ventose/demo",
   "private": false,
+  "main": "canary.js",
   "scripts": {
     "test:unit": "node canary.js"
   },

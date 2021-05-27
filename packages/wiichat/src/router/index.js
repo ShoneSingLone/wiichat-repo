@@ -7,7 +7,7 @@ import Home from '@/views/Home.vue'
 const routes = [{
         path: '/',
         name: 'Home',
-        component: Home,
+        component: () => import( /* webpackChunkName: "music" */ '@ventose/music')
     },
     {
         path: '/about',
