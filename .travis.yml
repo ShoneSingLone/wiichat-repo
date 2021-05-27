@@ -3,9 +3,9 @@ node_js:
   - lts/*
 
 install:
-  - npm bs 
+  - npm run bs 
 script:
-  - npm build 
+  - npm run build 
 
 deploy:
   provider: pages
