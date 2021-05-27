@@ -3,6 +3,7 @@ node_js:
   - lts/*
 
 install:
+  - npm i lerna 
   - npm run bs 
 script:
   - npm run build 
