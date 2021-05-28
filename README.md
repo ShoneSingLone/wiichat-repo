@@ -1,5 +1,15 @@
 # wiichat-repo
 
+[![Build Status](https://travis-ci.com/ShoneSingLone/wiichat-repo.svg?branch=master)](https://travis-ci.com/ShoneSingLone/wiichat-repo)
+
+[online](https://shonesinglone.github.io/wiichat-repo/#/)
+
+## resource
+
+[travis](https://travis-ci.com/github/ShoneSingLone/wiichat-repo)
+
+## Todo
+
 - [ ] 笔记本
 - [ ] 在线聊天
 - [ ] 思维导图

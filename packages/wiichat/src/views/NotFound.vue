@@ -1,7 +1,7 @@
 <template>
   <div class="flex vertical">
     <div className="gutter16" />
-    <h1>Not Found</h1>
+    <h1>App List</h1>
     <xBtn
       v-for="route in routes_accessable"
       :key="route.path"

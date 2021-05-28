@@ -5,8 +5,9 @@ node_js:
 install:
   - npm i lerna 
   - npm run bs 
+  - npm run build:1
 script:
-  - npm run build 
+  - npm run build:2
 
 deploy:
   provider: pages

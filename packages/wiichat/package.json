@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ventose/music": "^0.0.1",
+    "@ventose/music-player": "^0.0.0",
     "@ventose/ui": "^0.0.1",
     "core-js": "^3.6.5",
     "jquery": "^3.5.1",

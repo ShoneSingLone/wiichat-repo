@@ -34,7 +34,7 @@ export default defineComponent({
 </script>
 
 <style>
-body{
+/* body{
   background-color: #e0e0e0;
 }
 .new-nt {
@@ -45,5 +45,5 @@ body{
 }
 .new-nt:active {
   box-shadow: 5px 5px 10px #aaa inset, -5px -5px 10px #fff inset;
-}
+} */
 </style>
