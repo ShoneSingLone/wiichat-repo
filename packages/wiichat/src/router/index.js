@@ -3,13 +3,8 @@ import {
     createWebHashHistory
 } from 'vue-router';
 import NotFound from '@/views/NotFound.vue';
-import {
-    app as Music
-} from '@ventose/music-player/dist/music-player.es';
-import "@ventose/music-player/dist/style.css";
-
 import About from '@/views/About.vue';
-Music.mount("#app2");
+import Music from '@/views/Music.vue';
 
 export const routes_accessable = [{
         path: '/music',
