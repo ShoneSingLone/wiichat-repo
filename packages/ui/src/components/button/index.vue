@@ -21,7 +21,7 @@ export default defineComponent({
       return (
         <button
           type="button"
-          class="btn btn-outline-primary ripple new-nt"
+          class="btn ripple new-nt"
           {...configsAttrs}
           id={id}
         >
@@ -34,8 +34,11 @@ export default defineComponent({
 </script>
 
 <style>
+body{
+  background-color: #e0e0e0;
+}
 .new-nt {
-  border:unset;
+  border: unset;
   box-shadow: 5px 5px 10px #aaa, -5px -5px 10px #fff;
   position: relative;
   background: transparent;
