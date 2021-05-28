@@ -1,116 +1,13 @@
 0 silly argv {
-0 silly argv   _: [ 'bootstrap' ],
+0 silly argv   _: [ 'add' ],
+0 silly argv   scope: '@ventose/music-player',
+0 silly argv   globs: [],
 0 silly argv   lernaVersion: '3.22.1',
-0 silly argv   '$0': '..\\..\\..\\AppData\\Roaming\\npm\\node_modules\\lerna\\cli.js'
+0 silly argv   '$0': 'C:\\Users\\gh-ca\\AppData\\Roaming\\npm\\node_modules\\lerna\\cli.js',
+0 silly argv   pkg: 'ant-design-vue@2.2.1'
 0 silly argv }
 1 notice cli v3.22.1
-2 verbose rootPath C:\Users\SHONE\Documents\GitHub\wiichat-repo
-3 silly npmConfig {
-3 silly npmConfig   registry: undefined,
-3 silly npmConfig   npmClient: 'npm',
-3 silly npmConfig   npmClientArgs: [],
-3 silly npmConfig   mutex: undefined
-3 silly npmConfig }
-4 info Bootstrapping 3 packages
-5 verbose lifecycle preinstall
-6 silly lifecycle No script for "preinstall" in "@ventose/demo", continuing
-7 silly lifecycle No script for "preinstall" in "@ventose/ui", continuing
-8 silly lifecycle No script for "preinstall" in "@ventose/wiichat", continuing
-9 silly hasDependencyInstalled @ventose/wiichat @vue/cli-plugin-babel
-10 silly hasDependencyInstalled @ventose/wiichat @vue/cli-plugin-eslint
-11 silly hasDependencyInstalled @ventose/wiichat @vue/cli-plugin-pwa
-12 silly hasDependencyInstalled @ventose/wiichat @vue/cli-plugin-router
-13 silly hasDependencyInstalled @ventose/wiichat @vue/cli-plugin-unit-jest
-14 silly hasDependencyInstalled @ventose/wiichat @vue/cli-plugin-vuex
-15 silly hasDependencyInstalled @ventose/wiichat @vue/cli-service
-16 silly hasDependencyInstalled @ventose/wiichat @vue/compiler-sfc
-17 silly hasDependencyInstalled @ventose/wiichat @vue/test-utils
-18 silly hasDependencyInstalled @ventose/wiichat babel-eslint
-19 silly hasDependencyInstalled @ventose/wiichat eslint
-20 silly hasDependencyInstalled @ventose/wiichat eslint-plugin-vue
-21 silly hasDependencyInstalled @ventose/wiichat lint-staged
-22 silly hasDependencyInstalled @ventose/wiichat sass
-23 silly hasDependencyInstalled @ventose/wiichat sass-loader
-24 silly hasDependencyInstalled @ventose/wiichat style-resources-loader
-25 silly hasDependencyInstalled @ventose/wiichat typescript
-26 silly hasDependencyInstalled @ventose/wiichat vue-jest
-27 silly hasDependencyInstalled @ventose/wiichat core-js
-28 silly hasDependencyInstalled @ventose/wiichat jquery
-29 silly hasDependencyInstalled @ventose/wiichat register-service-worker
-30 silly hasDependencyInstalled @ventose/wiichat vue
-31 silly hasDependencyInstalled @ventose/wiichat vue-router
-32 silly hasDependencyInstalled @ventose/wiichat vuex
-33 silly root dependencies {}
-34 silly leaf dependencies {}
-35 info Installing external dependencies
-36 verbose actions 1 actions, concurrency 4
-37 silly npmInstallDependencies @ventose/wiichat [
-37 silly npmInstallDependencies   '@vue/cli-plugin-babel@~4.5.0',
-37 silly npmInstallDependencies   '@vue/cli-plugin-eslint@~4.5.0',
-37 silly npmInstallDependencies   '@vue/cli-plugin-pwa@~4.5.0',
-37 silly npmInstallDependencies   '@vue/cli-plugin-router@~4.5.0',
-37 silly npmInstallDependencies   '@vue/cli-plugin-unit-jest@~4.5.0',
-37 silly npmInstallDependencies   '@vue/cli-plugin-vuex@~4.5.0',
-37 silly npmInstallDependencies   '@vue/cli-service@~4.5.0',
-37 silly npmInstallDependencies   '@vue/compiler-sfc@^3.0.0',
-37 silly npmInstallDependencies   '@vue/test-utils@^2.0.0-0',
-37 silly npmInstallDependencies   'babel-eslint@^10.1.0',
-37 silly npmInstallDependencies   'eslint@^6.7.2',
-37 silly npmInstallDependencies   'eslint-plugin-vue@^7.0.0-0',
-37 silly npmInstallDependencies   'lint-staged@^9.5.0',
-37 silly npmInstallDependencies   'sass@^1.26.5',
-37 silly npmInstallDependencies   'sass-loader@^8.0.2',
-37 silly npmInstallDependencies   'style-resources-loader@^1.4.1',
-37 silly npmInstallDependencies   'typescript@~3.9.3',
-37 silly npmInstallDependencies   'vue-jest@^5.0.0-0',
-37 silly npmInstallDependencies   'core-js@^3.6.5',
-37 silly npmInstallDependencies   'jquery@^3.5.1',
-37 silly npmInstallDependencies   'register-service-worker@^1.7.1',
-37 silly npmInstallDependencies   'vue@^3.0.0',
-37 silly npmInstallDependencies   'vue-router@^4.0.0-0',
-37 silly npmInstallDependencies   'vuex@^4.0.0-0'
-37 silly npmInstallDependencies ]
-38 silly npmInstallDependencies backup C:\Users\SHONE\Documents\GitHub\wiichat-repo\packages\wiichat\package.json
-39 silly npmInstallDependencies writing tempJson {
-39 silly npmInstallDependencies   name: '@ventose/wiichat',
-39 silly npmInstallDependencies   version: '0.1.0',
-39 silly npmInstallDependencies   private: true,
-39 silly npmInstallDependencies   dependencies: {
-39 silly npmInstallDependencies     'core-js': '^3.6.5',
-39 silly npmInstallDependencies     jquery: '^3.5.1',
-39 silly npmInstallDependencies     'register-service-worker': '^1.7.1',
-39 silly npmInstallDependencies     vue: '^3.0.0',
-39 silly npmInstallDependencies     'vue-router': '^4.0.0-0',
-39 silly npmInstallDependencies     vuex: '^4.0.0-0'
-39 silly npmInstallDependencies   },
-39 silly npmInstallDependencies   devDependencies: {
-39 silly npmInstallDependencies     '@vue/cli-plugin-babel': '~4.5.0',
-39 silly npmInstallDependencies     '@vue/cli-plugin-eslint': '~4.5.0',
-39 silly npmInstallDependencies     '@vue/cli-plugin-pwa': '~4.5.0',
-39 silly npmInstallDependencies     '@vue/cli-plugin-router': '~4.5.0',
-39 silly npmInstallDependencies     '@vue/cli-plugin-unit-jest': '~4.5.0',
-39 silly npmInstallDependencies     '@vue/cli-plugin-vuex': '~4.5.0',
-39 silly npmInstallDependencies     '@vue/cli-service': '~4.5.0',
-39 silly npmInstallDependencies     '@vue/compiler-sfc': '^3.0.0',
-39 silly npmInstallDependencies     '@vue/test-utils': '^2.0.0-0',
-39 silly npmInstallDependencies     'babel-eslint': '^10.1.0',
-39 silly npmInstallDependencies     eslint: '^6.7.2',
-39 silly npmInstallDependencies     'eslint-plugin-vue': '^7.0.0-0',
-39 silly npmInstallDependencies     'lint-staged': '^9.5.0',
-39 silly npmInstallDependencies     sass: '^1.26.5',
-39 silly npmInstallDependencies     'sass-loader': '^8.0.2',
-39 silly npmInstallDependencies     'style-resources-loader': '^1.4.1',
-39 silly npmInstallDependencies     typescript: '~3.9.3',
-39 silly npmInstallDependencies     'vue-jest': '^5.0.0-0'
-39 silly npmInstallDependencies   },
-39 silly npmInstallDependencies   gitHooks: { 'pre-commit': 'lint-staged' },
-39 silly npmInstallDependencies   'lint-staged': { '*.{js,jsx,vue}': [ 'vue-cli-service lint', 'git add' ] }
-39 silly npmInstallDependencies }
-40 silly getExecOpts C:\Users\SHONE\Documents\GitHub\wiichat-repo\packages\wiichat undefined
-41 silly npmInstall [ 'npm', [ 'install' ] ]
-42 silly npmInstallDependencies cleanup C:\Users\SHONE\Documents\GitHub\wiichat-repo\packages\wiichat\package.json
-43 error Error: ENOENT: no such file or directory, rename 'C:\Users\SHONE\Documents\GitHub\wiichat-repo\packages\wiichat\package.json.lerna_backup' -> 'C:\Users\SHONE\Documents\GitHub\wiichat-repo\packages\wiichat\package.json'
-43 error     at Object.renameSync (fs.js:763:3)
-43 error     at cleanup (C:\Users\SHONE\AppData\Roaming\npm\node_modules\lerna\node_modules\@lerna\npm-install\npm-install.js:70:10)
-43 error     at done (C:\Users\SHONE\AppData\Roaming\npm\node_modules\lerna\node_modules\@lerna\npm-install\npm-install.js:78:7)
-43 error     at C:\Users\SHONE\AppData\Roaming\npm\node_modules\lerna\node_modules\@lerna\npm-install\npm-install.js:94:19
+2 verbose rootPath E:\github\wiichat-repo
+3 error ant-design-vue: No matching version found for ant-design-vue@2.2.1.
+3 error     at pickManifest (C:\Users\gh-ca\AppData\Roaming\npm\node_modules\lerna\node_modules\_npm-pick-manifest@3.0.2@npm-pick-manifest\index.js:122:13)
+3 error     at C:\Users\gh-ca\AppData\Roaming\npm\node_modules\lerna\node_modules\_@evocateur_pacote@9.6.5@@evocateur\pacote\lib\fetchers\registry\manifest.js:24:14

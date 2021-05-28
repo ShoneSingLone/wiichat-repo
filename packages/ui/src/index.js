@@ -13,6 +13,7 @@ export {
     windowOnResize
 }
 from "./utils/resize"
+
 export const color = _color;
 
 const componentList = [xBtn, xIcon];
