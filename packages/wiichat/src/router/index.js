@@ -7,6 +7,7 @@ import {
     app as Music
 } from '@ventose/music-player/dist/music-player.es';
 import "@ventose/music-player/dist/style.css";
+
 import About from '@/views/About.vue';
 Music.mount("#app2");
 

@@ -2,7 +2,7 @@
   "name": "@ventose/music-player",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "serve": "vite preview"
   },
@@ -13,6 +13,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.2",
     "@vue/compiler-sfc": "^3.0.5",
+    "@ventose/ui": "^0.0.1",
     "vite": "^2.3.4"
   }
 }
