@@ -5,7 +5,11 @@ import App from './App.vue'
 import "ant-design-vue/dist/antd.css";
 import {
     Button,
+    Card
 } from "ant-design-vue"
 
+const componets = [Button, Card];
+
 export const app = createApp(App);
-[Button].forEach(component => app.use(component))
+
+componets.forEach(component => app.use(component))

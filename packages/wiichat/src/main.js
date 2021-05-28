@@ -9,7 +9,6 @@ import {
 } from './store'
 import myui from "@ventose/ui";
 
-
 const app = createApp(App);
 
 app

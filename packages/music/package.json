@@ -1,9 +1,0 @@
-{
-  "name": "@ventose/music",
-  "private": false,
-  "main": "index.js",
-  "scripts": {
-    "test:unit": "node canary.js"
-  },
-  "version": "0.0.1"
-}

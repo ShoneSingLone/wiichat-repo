@@ -3,13 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@ventose/music": "^0.0.1",
     "@ventose/music-player": "^0.0.0",
     "@ventose/ui": "^0.0.1",
     "core-js": "^3.6.5",
