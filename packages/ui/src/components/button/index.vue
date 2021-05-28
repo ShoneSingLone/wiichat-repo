@@ -18,11 +18,10 @@ export default defineComponent({
       } = props;
       const { slots } = context;
       const id = `x-btn_${uuid()}`;
-
       return (
         <button
           type="button"
-          class="btn btn-primary ripple"
+          class="btn btn-outline-primary ripple new-nt"
           {...configsAttrs}
           id={id}
         >
@@ -35,4 +34,13 @@ export default defineComponent({
 </script>
 
 <style>
+.new-nt {
+  border:unset;
+  box-shadow: 5px 5px 10px #aaa, -5px -5px 10px #fff;
+  position: relative;
+  background: transparent;
+}
+.new-nt:active {
+  box-shadow: 5px 5px 10px #aaa inset, -5px -5px 10px #fff inset;
+}
 </style>

@@ -5,25 +5,24 @@ import xRipple, {
     installXRippleToBody
 } from "./components/Ripple/index.vue";
 import _color from "./utils/colors";
-import $ from "jquery";
+import {
+    setAliFont
+} from "./utils/font"
 import _ from "lodash";
+export {
+    windowOnResize
+}
+from "./utils/resize"
 export const color = _color;
 
-export function windowOnResize(fn) {
-    $(window).on('resize', _.debounce(fn, 300));
-}
-
-const componentList = [
-    xBtn,
-    xIcon
-];
+const componentList = [xBtn, xIcon];
 
 export default {
     install: (app) => {
-        $("<script/>", {
-            src: '//at.alicdn.com/t/font_832872_70g7lgiovvd.js'
-        }).appendTo($("body"))
+        setAliFont();
+        /* 仿material design 水波纹 */
         installXRippleToBody(xRipple);
+        /* 注册app全局组件 */
         componentList.forEach(component => app.component(component.name, component));
     }
 }

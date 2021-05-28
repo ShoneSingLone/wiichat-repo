@@ -1,19 +1,32 @@
 import {
     createRouter,
     createWebHashHistory
-} from 'vue-router'
-import Home from '@/views/Home.vue'
+} from 'vue-router';
+import NotFound from '@/views/NotFound.vue';
+import Music from '@ventose/music';
+import About from '@/views/About.vue';
 
-const routes = [{
-        path: '/',
-        name: 'Home',
-        component: () => import( /* webpackChunkName: "music" */ '@ventose/music')
+export const routes_accessable = [
+    {
+        path: '/music',
+        name: 'Music',
+        component: Music
     },
     {
         path: '/about',
         name: 'About',
-        component: () => import( /* webpackChunkName: "about" */ '@/views/About.vue')
+        component: About
     }
+]
+
+const routes = [
+    // 将匹配所有内容并将其放在 `$route.params.pathMatch` 下
+    {
+        path: '/:pathMatch(.*)*',
+        name: 'NotFound',
+        component: NotFound
+    },
+    ...routes_accessable
 ];
 
 const router = createRouter({

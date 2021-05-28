@@ -1,5 +1,5 @@
 {
-  "name": "@ventose/music",
+  "name": "@ventose/demo",
   "private": false,
   "scripts": {
     "test:unit": "node canary.js"
