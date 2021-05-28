@@ -20,7 +20,7 @@
 </template>
 <script>
 export default {
-  name: "Home",
+  name: "ViewBtnTest",
   methods: {
     setCurrentIndex(index) {
       this.currentIndex = index

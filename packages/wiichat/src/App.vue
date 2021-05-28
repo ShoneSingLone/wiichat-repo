@@ -1,5 +1,4 @@
 <template>
-  <xRipple />
   <router-view />
 </template>
 <script>

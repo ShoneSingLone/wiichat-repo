@@ -4,6 +4,18 @@
     <xBtn>
       <template #default="{ id }"> {{ currentIndex }}{{ id }} </template>
     </xBtn>
+    <input v-model="text" />
+    <div v-for="(item, index) in items" :key="index">
+      <xBtn :configs="xBtnConfigs" @click="setCurrentIndex(index)">{{ item }}</xBtn>
+    </div>
+    <div v-for="(item, index) in items" :key="index">
+      <xBtn :configs="{ text: item }" data-is="btn" class="margin4 flex large" style="color: white" @click="setCurrentIndex(index)" />
+    </div>
+    <div className="gutter16" />
+    <div>
+      <button type="button" className="btn ripple">native btn</button>
+      <div className="gutter16" />
+    </div>
   </div>
 </template>
 <script>
