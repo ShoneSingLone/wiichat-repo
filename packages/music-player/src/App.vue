@@ -16,7 +16,7 @@
           <div id="thumb"></div>
         </div>
       </div>
-      <audio controls src="https://raw.githubusercontent.com/ShoneSingLone/wiichat-repo/music/packages/music-player/public/mymusicresource/demo1.m4a">
+      <audio controls :src="audioSrc">
         Your browser does not support the
         <code>audio</code> element.
       </audio>
@@ -30,7 +30,9 @@ import "@ventose/ui/src/styles/common.scss";
 
 export default defineComponent({
   data() {
-    return {};
+    return {
+      audioSrc:`https://gitee.com/ShoneSingLone/wiichat-repo/raw/master/packages/music-player/public/mymusicresource/demo1.m4a`
+    };
   },
 });
 </script>
