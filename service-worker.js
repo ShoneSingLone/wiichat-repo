@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.a6d8dc0146a6697e7e2e10efd1b46a10.js"
+  "precache-manifest.417abb32647c68b9803f7373509b1f2f.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "@ventose/wiichat"});
