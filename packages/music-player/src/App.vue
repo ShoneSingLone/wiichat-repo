@@ -31,7 +31,7 @@ import "@ventose/ui/src/styles/common.scss";
 export default defineComponent({
   data() {
     return {
-      audioSrc:`https://gitee.com/ShoneSingLone/wiichat-repo/raw/master/packages/music-player/public/mymusicresource/demo1.m4a`
+      audioSrc:`https://www.ventose.xyz/static/media/demo1.m4a`
     };
   },
 });
