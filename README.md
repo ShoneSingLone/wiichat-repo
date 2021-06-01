@@ -20,3 +20,8 @@
 ### 启动
 
 - `npm run dev`
+
+
+### 
+
+[vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)

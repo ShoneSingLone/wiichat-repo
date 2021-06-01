@@ -17,4 +17,4 @@ deploy:
   on:
     branch: master
   target_branch: travis
-  local_dir: packages/wiichat/dist
+  local_dir: packages/chat/dist
