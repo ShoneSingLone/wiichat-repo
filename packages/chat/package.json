@@ -7,12 +7,12 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.0.5",
     "@vant/use": "^1.1.2",
     "@ventose/music-player": "^0.0.0",
     "ant-design-vue": "2.1.2",
     "jquery": "^3.5.1",
-    "vant": "^2.12.21"
+    "vant": "^3.0.18",
+    "vue": "^3.0.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.3",
