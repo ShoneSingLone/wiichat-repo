@@ -21,6 +21,7 @@
 
 - `npm run dev`
 
+delete_node_modules.js 删除 package-lock.js 和 node_modules
 
 ### 
 

@@ -12,7 +12,9 @@
     "ant-design-vue": "2.1.2",
     "jquery": "^3.5.1",
     "vant": "^3.0.18",
-    "vue": "^3.0.5"
+    "vue": "^3.0.5",
+    "@ventose/ui": "^0.0.1",
+    "vue-router": "^4.0.0-0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.3",
