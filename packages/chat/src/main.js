@@ -1,17 +1,17 @@
 import {
-    createApp
-} from 'vue'
-import App from './App.vue'
-import "ant-design-vue/dist/antd.css";
-import {
-    Button,
-    Card
-} from "ant-design-vue"
+    useWindowSize
+} from '@vant/use';
 
-const componets = [Button, Card];
-
-export const app = createApp(App);
-
-componets.forEach(component => app.use(component))
-
-app.mount('#app')
+(async () => {
+    const {
+        width,
+        height
+    } = useWindowSize();
+    let modules;
+    if (width.value > height.value) {
+        modules = await import("./pc.js");
+    } else {
+        modules = await import("./mobile.js")
+    }
+    modules.app.mount('#app')
+})();
