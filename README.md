@@ -26,3 +26,19 @@ delete_node_modules.js 删除 package-lock.js 和 node_modules
 ### 
 
 [vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
+`
+npm init @vitejs/app admin -- --template vue-ts
+
+- vanilla
+- vanilla-ts
+- vue
+- vue-ts
+- react
+- react-ts
+- preact
+- preact-ts
+- lit-element
+- lit-element-ts
+- svelte
+- svelte-ts
+`
