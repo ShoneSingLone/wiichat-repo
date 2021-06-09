@@ -26,6 +26,8 @@ delete_node_modules.js 删除 package-lock.js 和 node_modules
 ### 
 
 [vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
+[plugin-vue-jsx](https://github.com/vitejs/vite/tree/main/packages/plugin-vue-jsx)
+
 `
 npm init @vitejs/app admin -- --template vue-ts
 

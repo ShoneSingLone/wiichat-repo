@@ -12,6 +12,7 @@
   "scripts": {
     "bs": "lerna bootstrap",
     "dev:music-player": "lerna run dev --scope=@ventose/music-player",
+    "dev:admin": "lerna run dev --scope=@ventose/admin",
     "dev:wiichat": "lerna run dev --scope=@ventose/wiichat",
     "build:1": "lerna run build --scope=@ventose/music-player",
     "build:2": "lerna run build --scope=@ventose/wiichat",

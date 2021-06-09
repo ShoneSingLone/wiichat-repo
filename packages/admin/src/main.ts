@@ -1,4 +1,13 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
+import "ant-design-vue/dist/antd.css";
+import {Button, Card, ConfigProvider, Icon, Menu, Dropdown} from "ant-design-vue";
 
-createApp(App).mount('#app')
+
+const componets = [Button, Card, ConfigProvider, Icon, Menu, Dropdown];
+
+const app_admin = createApp(App);
+
+componets.forEach((component) => app_admin.use(component));
+
+app_admin.mount("#app");
