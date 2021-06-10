@@ -23,13 +23,16 @@
 
 delete_node_modules.js 删除 package-lock.js 和 node_modules
 
-### 
+### Others
 
-[vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
-[plugin-vue-jsx](https://github.com/vitejs/vite/tree/main/packages/plugin-vue-jsx)
+- [vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
+- [plugin-vue-jsx](https://github.com/vitejs/vite/tree/main/packages/plugin-vue-jsx)
+- [IndexedDB_API](https://developer.mozilla.org/zh-CN/docs/Web/API/IndexedDB_API)
+- [jsstore](https://jsstore.net/tutorial/get-started/)
+- [dexie](https://dexie.org/)
 
 `
-npm init @vitejs/app admin -- --template vue-ts
+npm init @vitejs/app ui -- --template vue
 
 - vanilla
 - vanilla-ts

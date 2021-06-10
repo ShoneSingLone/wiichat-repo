@@ -29,7 +29,7 @@ lerna init
 - `npmClient`指定npm，国内可能比较有用，网络问题嘛......
 - `lerna version`发版本打标签直接送上remote/origin
 - `init -y init`注意`main`对应的文件
-- `lerna add idb-keyval --scope=@ventose/ui` 类似 `yarn add`动态链接lib，不走仓库 --scope即安装到 @ventose/wiichat
+- `lerna add @ventose/ui --scope=@ventose/admin` 类似 `yarn add`动态链接lib，不走仓库 --scope即安装到 @ventose/wiichat
 - `lerna bootstrap`类似 `npm i`
 
 ```js

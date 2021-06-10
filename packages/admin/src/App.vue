@@ -1,17 +1,18 @@
 <script lang="tsx">
 import { defineComponent } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import Login from "./components/Login";
 
 export default defineComponent({
   name: "App",
   setup(props) {
     return () => {
+      const HeHe = () => {
+        return <h2>heh1</h2>;
+      };
       return (
-        <>
-          <AConfigProvider>
-            <HelloWorld />
-          </AConfigProvider>
-        </>
+        <AConfigProvider>
+          <Login />
+        </AConfigProvider>
       );
     };
   },
