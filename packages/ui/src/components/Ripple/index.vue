@@ -41,9 +41,13 @@ export function watchClickRipple(rippleVM) {
     /* 移除 */
 
     const { clientX, clientY, pageX, pageY, offsetX, offsetY } = $e;
+    console.log( clientX, clientY, pageX, pageY, offsetX, offsetY );
+    
     const { width, height, top, left } = this.getBoundingClientRect();
+    console.log( width, height, top, left );
     rippleVM.rippleStyle = {
-      top: `${pageY - clientY + top}px`,
+      top: 0,
+      // top: `${pageY - clientY + top}px`,
       left: `${pageX - clientX + left}px`,
       width: `${width}px`,
       height: `${height}px`,
@@ -101,7 +105,7 @@ export default defineComponent({
 }
 
 .ripple.is-active .ripple__circle {
-  animation: a-ripple 0.4s ease-in;
+  animation: a-ripple .4s ease-in;
 }
 
 @keyframes a-ripple {

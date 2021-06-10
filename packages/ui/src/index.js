@@ -1,5 +1,5 @@
-import './bs/scss/bootstrap.scss';
-import xBtn from "./components/button/index.vue";
+// import './bs/scss/bootstrap.scss';
+import xBtn from "./components/button/index";
 import xIcon from "./components/icon/index.vue";
 import xRipple, { installXRippleToBody } from "./components/Ripple/index.vue";
 import _color from "./utils/colors";
@@ -7,12 +7,14 @@ import { setAliFont } from "./utils/font"
 import _ from "lodash";
 import "ant-design-vue/dist/antd.css";
 import { Button, Card, ConfigProvider, Icon, Menu, Dropdown, } from "ant-design-vue";
-export { windowOnResize } from "./utils/resize"
-export const color = _color;
 
 const componentList = [xBtn, xIcon];
 const antdv_componets = [Button, Card, ConfigProvider, Icon, Menu, Dropdown];
 
+/* export  */
+export  {$body} from "./components/Ripple/index.vue"
+export { windowOnResize } from "./utils/resize"
+export const color = _color;
 export default {
     install: (app) => {
         setAliFont();
@@ -22,4 +24,4 @@ export default {
         antdv_componets.forEach((component) => app.use(component));
         componentList.forEach(component => app.component(component.name, component));
     }
-}
+};

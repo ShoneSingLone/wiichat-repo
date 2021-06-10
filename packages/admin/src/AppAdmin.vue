@@ -1,6 +1,6 @@
 <script lang="tsx">
 import { defineComponent } from "vue";
-import Login from "./components/Login";
+// import Login from "./components/Login";
 
 export default defineComponent({
   name: "App",
@@ -10,9 +10,9 @@ export default defineComponent({
         return <h2>heh1</h2>;
       };
       return (
-        <AConfigProvider>
-          <Login />
-        </AConfigProvider>
+        <>
+          <xBtn>UI-xBtn</xBtn>
+        </>
       );
     };
   },
