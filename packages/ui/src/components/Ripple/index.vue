@@ -14,24 +14,32 @@
 <script>
 import { defineComponent, createApp } from "vue";
 import $ from "jquery";
-export const $body = $("body");
 export const idString = "x-relay-dom";
-export function ensureRelayDom() {
+
+export function ensureRelayDom($body) {
   const $rippleWrapper = $(`#${idString}`);
   if ($rippleWrapper?.length < 1) {
     $("<div/>", { id: idString }).css("display", "none").appendTo($body);
   }
 }
 
-export function installXRippleToBody(xRipple) {
+export function installXRippleToBody(xRipple,mount) {
+  const $body = $(mount);
   if (installXRippleToBody.done) return;
   $body.css("position", "relative");
-  ensureRelayDom();
-  createApp(xRipple).mount(`#${idString}`);
+  ensureRelayDom($body);
+  const app = createApp(xRipple);
+  app.mixin({
+    data(){
+      return {body:$body}
+    }
+  })
+  app.mount(`#${idString}`);
   installXRippleToBody.done = true;
 }
 
 export function watchClickRipple(rippleVM) {
+  const $body = rippleVM.body;
   if (watchClickRipple.done) return;
   $body.on("click", ".ripple", function ($e) {
     if ($e.currentTarget !== $e.target) return;
@@ -45,10 +53,14 @@ export function watchClickRipple(rippleVM) {
     
     const { width, height, top, left } = this.getBoundingClientRect();
     console.log( width, height, top, left );
+    const $thisOffset = $(this).offset();
+
     rippleVM.rippleStyle = {
-      top: 0,
+      // top: 0,
       // top: `${pageY - clientY + top}px`,
-      left: `${pageX - clientX + left}px`,
+      // left: `${pageX - clientX + left}px`,
+      top:`${$thisOffset.top}px`,
+      left:`${$thisOffset.left}px`,
       width: `${width}px`,
       height: `${height}px`,
     };
