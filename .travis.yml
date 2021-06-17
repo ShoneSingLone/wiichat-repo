@@ -5,10 +5,11 @@ node_js:
 install:
   - npm i lerna 
   - npm run bs 
-  - npm run build:1
+  - npm run build:0:ui
+  - npm run build:1:music-player
+  - npm run build:2:wiichat
 script:
-  - npm run build:2
-
+  - npm run deploy:copy
 deploy:
   provider: pages
   skip_cleanup: true

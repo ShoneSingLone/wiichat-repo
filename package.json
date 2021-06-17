@@ -17,6 +17,7 @@
     "build:0:ui": "lerna run build --scope=@ventose/ui",
     "build:1:music-player": "lerna run build --scope=@ventose/music-player",
     "build:2:wiichat": "lerna run build --scope=@ventose/wiichat",
+    "deploy:copy": "npm run ./scripts/copyfile.js",
     "test:wiichat": "lerna run test:unit",
     "test:demo": "lerna run test:unit --scope={@ventose/demo,@ventose/wiichat}",
     "diff": "lerna diff",
