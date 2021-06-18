@@ -1,31 +1,30 @@
 <template>
-  <HelloWorld msg="Hello Vue 3 + Vite" />
-  <div class="test">
-    <xBtn>ui-xBtn</xBtn>
-    <div class="test">
-      <xBtn>ui-xBtn</xBtn>
-      <div class="test">
-        <aButton>antdv</aButton>
-      </div>
+  <div class="flex horizon">
+    <ul class="menu">
+      <li v-for="route in routes" :key="route.name">
+        <router-link :to="route.path">{{ route.name }}</router-link>
+      </li>
+    </ul>
+    <div class="flex1 view">
+      <router-view />
     </div>
   </div>
 </template>
 
-<script setup>
-import HelloWorld from "./components/HelloWorld.vue";
-
-// This starter template is using Vue 3 experimental <script setup> SFCs
-// Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
+<script>
+import { routes } from "./router";
+export default {
+  data() {
+    return {
+      routes,
+    };
+  },
+};
 </script>
-
 <style>
 #app {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-.test {
-  margin: 120px;
-  outline: 1px solid green;
 }
 </style>

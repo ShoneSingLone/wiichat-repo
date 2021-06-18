@@ -48,7 +48,7 @@ export function watchClickRipple(rippleVM) {
     /* ripple元素波纹效果 */
     /* 移除 */
 
-    const { clientX, clientY, pageX, pageY, offsetX, offsetY } = $e;
+    const { clientX, clientY, pageX, pageY, offsetX, offsetY } = $e.delegateTarget;
     console.log( clientX, clientY, pageX, pageY, offsetX, offsetY );
     
     const { width, height, top, left } = this.getBoundingClientRect();

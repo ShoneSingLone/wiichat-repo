@@ -6,22 +6,25 @@ import _color from "./utils/colors";
 import {setAliFont} from "./utils/font"
 import _ from "lodash";
 import "ant-design-vue/dist/antd.css";
-import {Button, Card, ConfigProvider, Icon, Menu, Dropdown,} from "ant-design-vue";
+// import { Button, Card, ConfigProvider, Icon, Menu, Dropdown, } from "ant-design-vue";
+import antdv from "ant-design-vue";
+import "./styles/common.scss"
 
 const componentList = [xBtn, xIcon];
-const antdv_componets = [Button, Card, ConfigProvider, Icon, Menu, Dropdown];
+// const antdv_componets = [Button, Card, ConfigProvider, Icon, Menu, Dropdown];
 
 /* export  */
 export {windowOnResize} from "./utils/resize"
 export const color = _color;
 export default {
+    antdv,
     install: (app, {mount}) => {
-        debugger;
         setAliFont();
         /* 仿material design 水波纹 */
         installXRippleToBody(xRipple,mount);
         /* 注册app全局组件 */
-        antdv_componets.forEach((component) => app.use(component));
+        app.use(antdv)
+        // antdv_componets.forEach(component => app.use(component));
         componentList.forEach(component => app.component(component.name, component));
     }
 };

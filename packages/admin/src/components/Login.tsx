@@ -10,11 +10,9 @@ export default defineComponent({
       const refLoginForm = ref(null);
       return (
         <div>
-          <AButton class="ripple">AButton</AButton>
-          <div>
-            <xBtn>xBtn</xBtn>
-          </div>
-          <AButton class="ripple">AButton</AButton>
+          <AForm id="formLogin" class="user-layout-login" ref="formLogin" form="form" onSubmit={e => handleSubmit(e)}>
+          
+          </AForm>
         </div>
       );
     };
