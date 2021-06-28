@@ -77,7 +77,7 @@ export function watchClickRipple(rippleVM) {
 }
 
 export default defineComponent({
-  name: "xRipple",
+  name: "Ripple",
   data() {
     return {
       isShow: false,
