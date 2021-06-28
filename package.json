@@ -6,18 +6,23 @@
     "@typescript-eslint/parser": "^4.15.0",
     "eslint": "^7.19.0",
     "eslint-plugin-vue": "^7.5.0",
-    "lerna": "^3.22.1"
+    "lerna": "^3.22.1",
+    "lerna-update-wizard": "^0.17.8"
   },
   "npmClient": "cnpm",
   "scripts": {
-    "bs": "lerna bootstrap",
+    "bs": "lerna bootstrap --hoist",
     "dev:music-player": "lerna run dev --scope=@ventose/music-player",
+    "dev:admin": "lerna run dev --scope=@ventose/admin",
     "dev:wiichat": "lerna run dev --scope=@ventose/wiichat",
-    "build:1": "lerna run build --scope=@ventose/music-player",
-    "build:2": "lerna run build --scope=@ventose/wiichat",
+    "build:0:ui": "lerna run build --scope=@ventose/ui",
+    "build:1:music-player": "lerna run build --scope=@ventose/music-player",
+    "build:2:wiichat": "lerna run build --scope=@ventose/wiichat",
+    "deploy:copy": "npm run ./scripts/copyfile.js",
     "test:wiichat": "lerna run test:unit",
     "test:demo": "lerna run test:unit --scope={@ventose/demo,@ventose/wiichat}",
     "diff": "lerna diff",
+    "update": "lernaupdate",
     "new-version": "lerna version --conventional-commits --yes"
   }
 }

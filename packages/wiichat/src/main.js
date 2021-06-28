@@ -11,8 +11,10 @@ import myui from "@ventose/ui";
 
 const app = createApp(App);
 
-app
-    .use(myui)
+app.use(myui, {
+        mount: "#app"
+    })
     .use(store)
     .use(router);
+
 app.mount('#app');
