@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@vitejs/plugin-vue-jsx": "^1.1.5",
-    "ant-design-vue": "^2.2.0-beta.2",
+    "ant-design-vue": "^2.2.0-beta.6",
     "idb-keyval": "^5.0.6",
     "jquery": "^3.5.1",
     "lodash": "^4.17.21",

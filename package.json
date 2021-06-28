@@ -6,7 +6,8 @@
     "@typescript-eslint/parser": "^4.15.0",
     "eslint": "^7.19.0",
     "eslint-plugin-vue": "^7.5.0",
-    "lerna": "^3.22.1"
+    "lerna": "^3.22.1",
+    "lerna-update-wizard": "^0.17.8"
   },
   "npmClient": "cnpm",
   "scripts": {
@@ -21,6 +22,7 @@
     "test:wiichat": "lerna run test:unit",
     "test:demo": "lerna run test:unit --scope={@ventose/demo,@ventose/wiichat}",
     "diff": "lerna diff",
+    "update": "lernaupdate",
     "new-version": "lerna version --conventional-commits --yes"
   }
 }

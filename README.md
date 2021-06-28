@@ -32,7 +32,7 @@ delete_node_modules.js 删除 package-lock.js 和 node_modules
 - [dexie](https://dexie.org/)
 
 `
-npm init @vitejs/app ui -- --template vue
+npm init @vitejs/app antdv-admin -- --template vue-ts
 
 - vanilla
 - vanilla-ts

@@ -9,11 +9,7 @@ export default defineComponent({
     return () => {
       const refLoginForm = ref(null);
       return (
-        <div>
-          <AForm id="formLogin" class="user-layout-login" ref="formLogin" form="form" onSubmit={e => handleSubmit(e)}>
-          
-          </AForm>
-        </div>
+        <div>asdf </div>
       );
     };
   },
