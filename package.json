@@ -11,7 +11,7 @@
   },
   "npmClient": "cnpm",
   "scripts": {
-    "bs": "lerna bootstrap",
+    "bs": "lerna bootstrap --hoist",
     "dev:music-player": "lerna run dev --scope=@ventose/music-player",
     "dev:admin": "lerna run dev --scope=@ventose/admin",
     "dev:wiichat": "lerna run dev --scope=@ventose/wiichat",
