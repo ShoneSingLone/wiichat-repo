@@ -11,6 +11,7 @@ Lerna 是一个管理工具，用于管理包含多个软件包（package）的 
 [How to Use Lerna](https://www.youtube.com/watch?v=p6qoJ4apCjA)
 [Commitizen](https://www.jianshu.com/p/d264f88d13a4)
 [用Lerna管理多包JS项目](https://zhuanlan.zhihu.com/p/33858131)
+[lerna管理前端packages的最佳实践](http://www.sosout.com/2018/07/21/lerna-repo.html)
 
 ## [入门](https://lernajs.bootcss.com/#getting-started)
 
