@@ -2,6 +2,7 @@
   <div class="main">
     <div class="vui__board flexbox">
       <div class="flex1 flexbox">
+        <van-button type="primary" block>块级元素</van-button>
         <h1>右上角按钮</h1>
         <h1>侧边栏</h1>
         <h1>中间栏</h1>

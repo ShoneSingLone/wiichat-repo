@@ -7,14 +7,19 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@vant/use": "^1.1.2",
     "@ventose/music-player": "^0.0.0",
-    "vue": "^3.0.5",
+    "@ventose/ui": "^0.0.1",
+    "ant-design-vue": "^2.2.0-beta.6",
     "jquery": "^3.5.1",
-    "ant-design-vue": "2.1.2"
+    "vant": "^3.0.18",
+    "vue": "^3.0.5",
+    "vue-router": "^4.0.0-0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.3",
     "@vue/compiler-sfc": "^3.0.5",
-    "vite": "^2.3.5"
+    "vite": "^2.4.0-beta.0",
+    "vite-plugin-style-import": "^0.10.1"
   }
 }
