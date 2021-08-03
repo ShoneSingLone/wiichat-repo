@@ -2,18 +2,13 @@
   "name": "@ventose/chat",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite --host",
+    "start": "vite --host",
     "build": "vite build",
     "serve": "vite preview"
   },
   "dependencies": {
-    "@vant/use": "^1.1.2",
-    "@ventose/music-player": "^0.0.0",
-    "ant-design-vue": "2.1.2",
-    "jquery": "^3.5.1",
-    "vant": "^3.0.18",
+    "@nutui/nutui": "^3.1.2",
     "vue": "^3.0.5",
-    "@ventose/ui": "^0.0.1",
     "vue-router": "^4.0.0-0"
   },
   "devDependencies": {

@@ -1,17 +1,20 @@
+import NutUI from "@nutui/nutui";
+import "@nutui/nutui/dist/style.css";
 import {
-    useWindowSize
-} from '@vant/use';
+    createApp
+} from "vue";
+import {
+    createRouter,
+    createWebHashHistory
+} from 'vue-router';
+import App from "./AppMobile.vue";
+import "./style.scss";
+const router = createRouter({
+    history: createWebHashHistory(),
+    routes: []
+});
 
-(async () => {
-    const {
-        width,
-        height
-    } = useWindowSize();
-    let modules;
-    if (width.value > height.value) {
-        modules = await import("./pc.js");
-    } else {
-        modules = await import("./mobile.js")
-    }
-    modules.app.mount('#app')
-})();
+createApp(App)
+    .use(NutUI)
+    .use(router)
+    .mount("#app");
