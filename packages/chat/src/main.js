@@ -1,5 +1,5 @@
-import NutUI from "@nutui/nutui";
-import "@nutui/nutui/dist/style.css";
+import Vant from 'vant';
+import 'vant/lib/index.css';
 import {
     createApp
 } from "vue";
@@ -15,6 +15,6 @@ const router = createRouter({
 });
 
 createApp(App)
-    .use(NutUI)
+    .use(Vant)
     .use(router)
     .mount("#app");

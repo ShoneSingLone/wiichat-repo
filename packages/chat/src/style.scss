@@ -1,27 +1,44 @@
 html,
 body,
 #app {
-  height: 100vh;
-  width: 100vw;
-  padding: 0;
-  margin: 0;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.card {
+    margin-bottom: 24px;
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 12px #ebedf0;
+}
+
+.mr10 {
+    margin-right: 10px;
 }
 
 .flex {
     display: flex;
-    &.vertical {
-      flex-flow: column nowrap;
-    }
-    &.jcc {
-      justify-content: center;
-    }
-    &.aic {
-      align-items: center;
-    }
-  
-    .flex1 {
-      flex: 1;
-    }
-  }
 
-  
+    &.vertical {
+        flex-flow: column nowrap;
+    }
+
+    &.jcc {
+        justify-content: center;
+    }
+
+    &.jcsb {
+        justify-content: space-between;
+    }
+
+    &.aic {
+        align-items: center;
+    }
+
+    .flex1 {
+        flex: 1;
+    }
+}
