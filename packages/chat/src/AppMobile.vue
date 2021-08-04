@@ -1,66 +1,46 @@
 <template>
   <div class="flex vertical app-wrapper">
-    <div class="van-nav-bar van-hairline--bottom">
+    <div class="van-nav-bar van-hairline--bottom shadow">
       <div class="van-nav-bar__content">
         <div class="van-nav-bar__left"></div>
         <div class="van-nav-bar__title van-ellipsis">{{ viewTitle }}</div>
         <div class="">
-          <van-icon
-            name="search"
-            size="18"
-            class="mr10"
+          <van-button
+            plain
+            round
+            size="small"
+            icon="search"
+            class="shadow mr10"
             @click="handleClick(null, 'search')"
           />
-          <van-popover
-            v-model:show="showPopover"
-            :actions="actions"
-            @select="handleClick($event)"
-            placement="bottom-end"
-          >
-            <van-grid
-              square
-              clickable
-              :border="false"
-              column-num="3"
-              style="width: 240px"
-            >
-              <van-grid-item
-                v-for="i in 6"
-                :key="i"
-                text="选项"
-                icon="photo-o"
-                @click="showPopover = false"
-              />
-            </van-grid>
-            <template #reference>
-              <van-icon name="add-o" size="18" class="mr10" />
-            </template>
-          </van-popover>
+
+          <ButtonMore />
         </div>
       </div>
     </div>
     <div class="container flex1">
+      <!-- https://b2nil.github.io/taro-ui-vue3/docs/virtualscroll.html -->
       <van-list
         v-model:loading="contactState.loading"
         :finished="contactState.finished"
         finished-text="没有更多了"
         @load="onLoad"
       >
-        <div
-          class="flex horizon jcsb aic card"
-          v-for="item in contactState.list"
-          :key="item"
-        >
-          <div class="avatar" :style="getBGImg(item)"></div>
-          <div class="info">
-            <div>{{ item.nickName }}</div>
-            <div>{{ item.updateTime }}</div>
-          </div>
-        </div>
+        <van-swipe-cell v-for="item in contactState.list" :key="item">
+          <UserCard :item="item" />
+          <template #right>
+            <van-button
+              square
+              text="删除"
+              type="danger"
+              class="delete-button"
+            />
+          </template>
+        </van-swipe-cell>
       </van-list>
     </div>
 
-    <van-tabbar v-model="currentActiveNavItem">
+    <van-tabbar v-model="currentActiveNavItem" class="shadow">
       <van-tabbar-item
         @click.native="tabSwitch(navItems[prop])"
         v-for="prop in navOrders"
@@ -78,6 +58,8 @@
 
 <script>
 import { Toast } from "vant";
+import UserCard from "./components/UserCard.vue";
+import ButtonMore from "./components/ButtonMore.vue";
 export const routeMeta = {
   login: {
     name: "login",
@@ -85,6 +67,7 @@ export const routeMeta = {
   },
 };
 export default {
+  components: { UserCard, ButtonMore },
   data() {
     const navItems = {
       chat: { prop: "chat", name: "聊天", icon: "chat-o", badge: 10 },
@@ -100,7 +83,6 @@ export default {
     ];
     return {
       viewTitle: "WiiChat",
-      showPopover: false,
       currentActiveNavItem: navOrders[0],
       navItems,
       navOrders,
@@ -166,6 +148,11 @@ export default {
 };
 </script>
 <style lang="scss">
+.more-tool-wrapper {
+  width: 240px;
+  overflow: hidden;
+}
+
 .app-wrapper {
   height: 100%;
   .container {
@@ -173,9 +160,10 @@ export default {
     height: 100%;
     overflow: auto;
     .avatar {
-      width: 48px;
-      height: 48px;
-      background: center;
+      margin: 1rem;
+      background-position: left center;
+      background-size: contain;
+      background-repeat: no-repeat;
       & + .info {
         font-size: 12px;
         color: #1d19197c;
