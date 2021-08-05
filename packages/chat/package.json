@@ -7,8 +7,10 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "alloyfinger": "^0.1.16",
     "vant": "^3.1.5",
     "vue": "^3.0.5",
+    "vue-mocropper": "^2.0.0",
     "vue-router": "^4.0.0-0"
   },
   "devDependencies": {

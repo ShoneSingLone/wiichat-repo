@@ -3,7 +3,12 @@
     <div class="van-nav-bar van-hairline--bottom shadow">
       <div class="van-nav-bar__content">
         <div class="van-nav-bar__left"></div>
-        <div class="van-nav-bar__title van-ellipsis">{{ viewTitle }}</div>
+        <div
+          class="van-nav-bar__title van-ellipsis"
+          style="flex: 1; text-align: left"
+        >
+          {{ viewTitle }}
+        </div>
         <div class="">
           <van-button
             plain
@@ -19,25 +24,7 @@
       </div>
     </div>
     <div class="container flex1">
-      <!-- https://b2nil.github.io/taro-ui-vue3/docs/virtualscroll.html -->
-      <van-list
-        v-model:loading="contactState.loading"
-        :finished="contactState.finished"
-        finished-text="没有更多了"
-        @load="onLoad"
-      >
-        <van-swipe-cell v-for="item in contactState.list" :key="item">
-          <UserCard :item="item" />
-          <template #right>
-            <van-button
-              square
-              text="删除"
-              type="danger"
-              class="delete-button"
-            />
-          </template>
-        </van-swipe-cell>
-      </van-list>
+      <ViewChat />
     </div>
 
     <van-tabbar v-model="currentActiveNavItem" class="shadow">
@@ -58,8 +45,9 @@
 
 <script>
 import { Toast } from "vant";
-import UserCard from "./components/UserCard.vue";
 import ButtonMore from "./components/ButtonMore.vue";
+import ViewChat from "./view/ViewChat/ViewChat.vue";
+
 export const routeMeta = {
   login: {
     name: "login",
@@ -67,7 +55,11 @@ export const routeMeta = {
   },
 };
 export default {
-  components: { UserCard, ButtonMore },
+  components: { ButtonMore, ViewChat },
+  provide() {
+    const APP = this;
+    return { APP };
+  },
   data() {
     const navItems = {
       chat: { prop: "chat", name: "聊天", icon: "chat-o", badge: 10 },
