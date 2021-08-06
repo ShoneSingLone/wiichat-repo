@@ -19,7 +19,7 @@
         :key="index"
         :text="i.text"
         :icon="i.icon"
-        @click="showPopover = false"
+        @click="showPopover = true"
       />
     </van-grid>
     <template #reference>

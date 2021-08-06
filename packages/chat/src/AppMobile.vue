@@ -6,11 +6,9 @@
         <div
           class="van-nav-bar__title van-ellipsis"
           style="flex: 1; text-align: left"
-        >
-          {{ viewTitle }}
-        </div>
-        <div class="">
-          <van-button
+        ></div>
+        <div>
+          <VanButton
             plain
             round
             size="small"
@@ -18,35 +16,81 @@
             class="shadow mr10"
             @click="handleClick(null, 'search')"
           />
-
           <ButtonMore />
         </div>
       </div>
     </div>
-    <div class="container flex1">
-      <ViewChat />
+    <!-- -->
+    <div class="main-view flex vertical">
+      <ViewChat v-show="'ViewChat' === currentView" />
+      <ViewFriends v-show="'ViewFriends' === currentView" />
+      <ViewApplication v-show="'ViewApplication' === currentView" />
+      <ViewContact v-show="'ViewContact' === currentView" />
     </div>
-
-    <van-tabbar v-model="currentActiveNavItem" class="shadow">
+    <!-- -->
+    <van-tabbar
+      v-model="currentActiveNavItem"
+      class="shadow van-tabbar--no--fixed"
+    >
       <van-tabbar-item
-        @click.native="tabSwitch(navItems[prop])"
+        @click.native="switchMainView(navItems[prop])"
         v-for="prop in navOrders"
         :key="prop"
         :name="prop"
         :icon="navItems[prop].icon"
         :badge="navItems[prop].badge"
-        >{{ navItems[prop].name }}</van-tabbar-item
-      >
+        >{{ navItems[prop].name }}
+      </van-tabbar-item>
     </van-tabbar>
   </div>
-
-  <!-- <component :is="currentView" /> -->
 </template>
 
 <script>
-import { Toast } from "vant";
 import ButtonMore from "./components/ButtonMore.vue";
 import ViewChat from "./view/ViewChat/ViewChat.vue";
+import ViewFriends from "./view/ViewFriends/ViewFriends.vue";
+import ViewApplication from "./view/ViewApplication/ViewApplication.vue";
+import ViewContact from "./view/ViewContact/ViewContact.vue";
+import router from "./route";
+
+const navItems = {
+  chat: {
+    prop: "chat",
+    name: "聊天",
+    icon: "chat-o",
+    badge: 10,
+    view: "ViewChat",
+  },
+  friends: {
+    prop: "friends",
+    name: "联系人",
+    icon: "friends-o",
+    view: "ViewFriends",
+  },
+  application: {
+    prop: "application",
+    name: "应用",
+    icon: "bag-o",
+    view: "ViewApplication",
+  },
+  contact: {
+    prop: "contact",
+    name: "我的",
+    icon: "contact",
+    view: "ViewContact",
+  },
+};
+
+const switchMainView = (item) => {
+  router.push({ path: "/", query: item });
+};
+
+const viewComponents = {
+  ViewChat,
+  ViewFriends,
+  ViewApplication,
+  ViewContact,
+};
 
 export const routeMeta = {
   login: {
@@ -55,25 +99,21 @@ export const routeMeta = {
   },
 };
 export default {
-  components: { ButtonMore, ViewChat },
+  components: { ...viewComponents, ButtonMore },
   provide() {
     const APP = this;
+    window.APP = this;
     return { APP };
   },
   data() {
-    const navItems = {
-      chat: { prop: "chat", name: "聊天", icon: "chat-o", badge: 10 },
-      friends: { prop: "friends", name: "联系人", icon: "friends-o" },
-      search: { prop: "search", name: "应用", icon: "bag-o" },
-      contact: { prop: "contact", name: "我的", icon: "contact" },
-    };
-    const navOrders = ["chat", "friends", "search", "contact"];
+    const navOrders = ["chat", "friends", "application", "contact"];
     const actions = [
       { text: "选项一" },
       { text: "选项二" },
       { text: "选项三" },
     ];
     return {
+      viewComponents,
       viewTitle: "WiiChat",
       currentActiveNavItem: navOrders[0],
       navItems,
@@ -86,35 +126,41 @@ export default {
       },
     };
   },
+  mounted() {
+    this.onLoad();
+  },
   watch: {
     "$route.query"(query) {
       console.log("🚀 ~ file: AppMobile.vue ~ line 46 ~ query", query);
     },
   },
   methods: {
+    switchMainView,
     getBGImg(item) {
       return {
         "background-image": `url(${item.avatar})`,
       };
     },
     onLoad() {
+      const vm = this;
       // 异步更新数据
       // setTimeout 仅做示例，真实场景中一般为 ajax 请求
       setTimeout(() => {
         for (let i = 0; i < 10; i++) {
-          this.contactState.list.push({
+          console.table(vm.contactState.list);
+          vm.contactState.list.push({
             avatar: "https://img.yzcdn.cn/vant/cat.jpeg",
             nickName: "ShoneSingLone",
             updateTime: "2021年8月4日21:03:07",
           });
         }
-
         // 加载状态结束
-        this.contactState.loading = false;
+        vm.contactState.loading = false;
+        console.log("vm.contactState.list", vm.contactState.list);
 
         // 数据全部加载完成
-        if (this.contactState.list.length >= 40) {
-          this.contactState.finished = true;
+        if (vm.contactState.list.length >= 40) {
+          vm.contactState.finished = true;
         }
       }, 1000);
     },
@@ -124,17 +170,15 @@ export default {
         type
       );
     },
-    tabSwitch(item) {
-      Toast(`标签 ${item.name}`);
-      this.$router.push({
-        path: "/",
-        query: item,
-      });
-    },
+  },
+  beforeCreate() {
+    if (!this.$route.query.view) {
+      switchMainView(navItems.chat);
+    }
   },
   computed: {
     currentView() {
-      return this.$route.query.view || routeMeta.login.name;
+      return this.$route.query.view;
     },
   },
 };
@@ -143,24 +187,25 @@ export default {
 .more-tool-wrapper {
   width: 240px;
   overflow: hidden;
+  border-radius: 12px;
 }
 
 .app-wrapper {
   height: 100%;
-  .container {
-    background: #9e9e9e38;
-    height: 100%;
-    overflow: auto;
-    .avatar {
-      margin: 1rem;
-      background-position: left center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      & + .info {
-        font-size: 12px;
-        color: #1d19197c;
-      }
+
+  .main-view {
+    height: 0;
+    flex: 1;
+    .container {
+      background: #9e9e9e38;
+      height: 100%;
+      overflow: auto;
     }
+  }
+
+  .van-tabbar--no--fixed {
+    position: relative;
   }
 }
 </style>
+//

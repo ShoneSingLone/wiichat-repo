@@ -1,6 +1,12 @@
 <template>
   <div class="van-card card">
     <div class="van-card__header">
+      <a class="van-card__thumb flex horizon aic">
+        <div class="van-image shadow">
+          <img :src="avatar" class="van-image__img" style="object-fit: cover" />
+          <img ref="img" src="./avatar.jpg" class="van-image__img__hidden" />
+        </div>
+      </a>
       <div class="van-card__content">
         <div>
           <div class="van-card__title van-multi-ellipsis--l2">
@@ -9,17 +15,6 @@
           <div class="van-card__desc van-ellipsis">{{ item.updateTime }}</div>
         </div>
       </div>
-      <a class="van-card__thumb flex horizon aic">
-        <div class="van-image shadow">
-          <img
-            :src="avatar"
-            class="van-image__img"
-            style="object-fit: cover"
-            @click="$emit('click')"
-          />
-          <img ref="img" src="./avatar.jpg" class="van-image__img__hidden" />
-        </div>
-      </a>
     </div>
   </div>
 </template>
@@ -73,9 +68,6 @@ export default {
   height: 0;
   display: none;
 }
-.van-card__thumb{
-  margin-right:0;
-}
 
 .van-image {
   width: 88px;
@@ -84,14 +76,12 @@ export default {
 
 .van-card__content {
   > div {
-    padding: 8px 44px;
+    padding: 8px 4px;
   }
 }
 
 .van-card.card {
   padding: 0;
-  margin: 10px;
-  border-top-left-radius: 44px;
-  border-bottom-left-radius: 44px;
+  margin: 1rem 1rem 0 1rem;
 }
 </style>

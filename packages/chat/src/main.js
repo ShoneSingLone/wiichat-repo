@@ -10,12 +10,8 @@ import {
 import App from "./AppMobile.vue";
 import "./style.scss";
 import VueMoCropper from 'vue-mocropper';
-import 'vue-mocropper/dist/mocropper.min.css'; 
-
-const router = createRouter({
-    history: createWebHashHistory(),
-    routes: []
-});
+import 'vue-mocropper/dist/mocropper.min.css';
+import router from "./route"
 
 createApp(App)
     .use(Vant)
