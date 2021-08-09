@@ -8,14 +8,7 @@
           style="flex: 1; text-align: left"
         ></div>
         <div>
-          <VanButton
-            plain
-            round
-            size="small"
-            icon="search"
-            class="shadow mr10"
-            @click="handleClick(null, 'search')"
-          />
+          <VanButton plain round size="small" icon="search" class="shadow mr10" @click="handleClick(null, 'search')" />
           <ButtonMore />
         </div>
       </div>
