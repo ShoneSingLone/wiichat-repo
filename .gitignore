@@ -27,3 +27,4 @@ packages/ui/dist
 packages/demo_lib/dist
 packages/demo_lib/package-lock.json
 packages/layer/dist
+packages/lib_layer/dist

@@ -1,1 +1,1 @@
-console.table([{success:"@ventose/demo canary success"}]);
+console.table([{success:"@ventose/lib_index"}]);

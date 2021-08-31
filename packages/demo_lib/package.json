@@ -1,11 +1,12 @@
 {
-  "name": "@ventose/demo",
+  "name": "@ventose/layer",
   "private": false,
   "version": "0.0.1",
   "scripts": {
     "start": "vite --host",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "test:unit": "node canary.js"
   },
   "dependencies": {
     "idb-keyval": "^5.0.6",
