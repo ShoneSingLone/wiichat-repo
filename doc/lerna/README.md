@@ -30,7 +30,7 @@ lerna init
 - `npmClient`指定npm，国内可能比较有用，网络问题嘛......
 - `lerna version`发版本打标签直接送上remote/origin
 - `init -y init`注意`main`对应的文件
-- `lerna add @vitejs/plugin-vue-jsx --scope=@ventose/ui` 类似 `yarn add`动态链接lib，不走仓库 --scope即安装到 @ventose/wiichat
+- `lerna add vue-i18n@next --scope=@ventose/antdv-admin` 类似 `yarn add`动态链接lib，不走仓库 --scope即安装到 @ventose/wiichat
 - `lerna bootstrap --hoist`类似 `npm i`;`hoist`将各个package里面公用的lib提到最外层的`node_modules`里面
 - `npm install --save-dev lerna-update-wizard`将整理可升级的lib
 

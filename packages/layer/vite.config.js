@@ -1,6 +1,4 @@
-import {
-	defineConfig
-} from "vite";
+import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import path from "path";
@@ -22,7 +20,7 @@ export default defineConfig({
 			}
 		},
 		lib: {
-			entry: path.resolve(__dirname, "src/index.js"),
+			entry: path.resolve(__dirname, "src/lib_index.js"),
 			name: "ventose-ui"
 		}
 	}
