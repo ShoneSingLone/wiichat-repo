@@ -1,17 +1,20 @@
+import Vant from 'vant';
+import 'vant/lib/index.css';
 import {
-    useWindowSize
-} from '@vant/use';
+    createApp
+} from "vue";
+import {
+    createRouter,
+    createWebHashHistory
+} from 'vue-router';
+import App from "./AppMobile.vue";
+import "./style.scss";
+import VueMoCropper from 'vue-mocropper';
+import 'vue-mocropper/dist/mocropper.min.css';
+import router from "./route"
 
-(async () => {
-    const {
-        width,
-        height
-    } = useWindowSize();
-    let modules;
-    if (width.value > height.value) {
-        modules = await import("./pc.js");
-    } else {
-        modules = await import("./mobile.js")
-    }
-    modules.app.mount('#app')
-})();
+createApp(App)
+    .use(Vant)
+    .use(VueMoCropper)
+    .use(router)
+    .mount("#app");

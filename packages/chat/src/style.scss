@@ -1,0 +1,50 @@
+html,
+body,
+#app {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.shadow {
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+}
+
+.card {
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+}
+
+.mr10 {
+    margin-right: 10px;
+}
+
+.flex {
+    display: flex;
+
+    &.vertical {
+        flex-flow: column nowrap;
+    }
+    &.horizon {
+        flex-flow: row nowrap;
+    }
+
+    &.jcc {
+        justify-content: center;
+    }
+
+    &.jcsb {
+        justify-content: space-between;
+    }
+
+    &.aic {
+        align-items: center;
+    }
+
+    .flex1 {
+        flex: 1;
+    }
+}

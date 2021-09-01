@@ -137,12 +137,12 @@ $utilities: map-merge(
     "viewport-width": (
       property: width,
       class: vw,
-      values: (100: 100vw)
+      values: (100: 100%)
     ),
     "min-viewport-width": (
       property: min-width,
       class: min-vw,
-      values: (100: 100vw)
+      values: (100: 100%)
     ),
     "height": (
       property: height,
@@ -163,12 +163,12 @@ $utilities: map-merge(
     "viewport-height": (
       property: height,
       class: vh,
-      values: (100: 100vh)
+      values: (100: 100%)
     ),
     "min-viewport-height": (
       property: min-height,
       class: min-vh,
-      values: (100: 100vh)
+      values: (100: 100%)
     ),
     // Flex utilities
     "flex": (
