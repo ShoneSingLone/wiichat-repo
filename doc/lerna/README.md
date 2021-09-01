@@ -23,7 +23,8 @@ git init lerna-repo && cd lerna-repo
 //将上述仓库转变为一个 Lerna 仓库：
 lerna init
 ```
-
+- `npm config set registry https://registry.npm.taobao.org`
+- `npm config set registry http://registry.npmjs.org/`
 - `lerna run`类似`npm run`针对package.json里的script。如果同名就会调用执行。
 - `script`中使用`--scope=@ventose/demo`可以只针对`scope`设定的lib。`--scope={@ventose/demo,@ventose/wiichat}`支持多个lib
 ![image.png](https://upload-images.jianshu.io/upload_images/2333173-12ccd42262faab5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
