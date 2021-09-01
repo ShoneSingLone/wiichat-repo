@@ -1,5 +1,5 @@
 //index.ts
-import { createI18n } from "vue-i18n"; //引入vue-i18n组件
+import {createI18n} from "vue-i18n"; //引入vue-i18n组件
 //引入同级目录下文件
 const modules = import.meta.globEager("./*");
 
@@ -15,6 +15,7 @@ function getLangAll(): any {
 	// getLangFiles(viewModules, message);
 	return message;
 }
+
 /**
  * 获取所有语言文件
  * @param {Object} mList
@@ -50,3 +51,4 @@ export const setAppI18n = (app: any) => {
 };
 
 export default i18n; //将i18n暴露出去，在main.js中引入挂载
+export const $t = i18n.global.t;
