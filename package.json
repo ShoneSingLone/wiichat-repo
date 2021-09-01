@@ -9,7 +9,7 @@
     "lerna": "^3.22.1",
     "lerna-update-wizard": "^0.17.8"
   },
-  "npmClient": "cnpm",
+  "npmClient": "yarn",
   "scripts": {
     "bs": "lerna bootstrap --hoist",
     "dev:music-player": "lerna run dev --scope=@ventose/music-player",
