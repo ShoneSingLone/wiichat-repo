@@ -1,6 +1,7 @@
 <template>
   <div class="flex vertical app-wrapper">
     <div class="van-nav-bar van-hairline--bottom shadow">
+<<<<<<< Updated upstream
       <div class="van-nav-bar__content">
         <div class="van-nav-bar__left"></div>
         <div
@@ -12,27 +13,31 @@
           <ButtonMore />
         </div>
       </div>
+=======
+      <AppNav v-if="currentNavHeader === 'default'"/>
+      <ViewChatNavHeader v-if="currentNavHeader === 'ViewChatNavHeader'"/>
+>>>>>>> Stashed changes
     </div>
     <!-- -->
     <div class="main-view flex vertical">
-      <ViewChat v-show="'ViewChat' === currentView" />
-      <ViewFriends v-show="'ViewFriends' === currentView" />
-      <ViewApplication v-show="'ViewApplication' === currentView" />
-      <ViewContact v-show="'ViewContact' === currentView" />
+      <ViewChat v-show="'ViewChat' === currentView"/>
+      <ViewFriends v-show="'ViewFriends' === currentView"/>
+      <ViewApplication v-show="'ViewApplication' === currentView"/>
+      <ViewContact v-show="'ViewContact' === currentView"/>
     </div>
     <!-- -->
     <van-tabbar
-      v-model="currentActiveNavItem"
-      class="shadow van-tabbar--no--fixed"
+        v-model="currentActiveNavItem"
+        class="shadow van-tabbar--no--fixed"
     >
       <van-tabbar-item
-        @click.native="switchMainView(navItems[prop])"
-        v-for="prop in navOrders"
-        :key="prop"
-        :name="prop"
-        :icon="navItems[prop].icon"
-        :badge="navItems[prop].badge"
-        >{{ navItems[prop].name }}
+          @click.native="switchMainView(navItems[prop])"
+          v-for="prop in navOrders"
+          :key="prop"
+          :name="prop"
+          :icon="navItems[prop].icon"
+          :badge="navItems[prop].badge"
+      >{{ navItems[prop].name }}
       </van-tabbar-item>
     </van-tabbar>
   </div>
@@ -45,6 +50,8 @@ import ViewFriends from "./view/ViewFriends/ViewFriends.vue";
 import ViewApplication from "./view/ViewApplication/ViewApplication.vue";
 import ViewContact from "./view/ViewContact/ViewContact.vue";
 import router from "./route";
+import AppNav from "./components/AppNav.vue";
+import ViewChatNavHeader from "./view/ViewChat/ViewChatNavHeader.vue";
 
 const navItems = {
   chat: {
@@ -75,7 +82,7 @@ const navItems = {
 };
 
 const switchMainView = (item) => {
-  router.push({ path: "/", query: item });
+  router.push({path: "/", query: item});
 };
 
 const viewComponents = {
@@ -92,20 +99,23 @@ export const routeMeta = {
   },
 };
 export default {
-  components: { ...viewComponents, ButtonMore },
+  components: {ViewChatNavHeader, AppNav, ...viewComponents, ButtonMore},
   provide() {
     const APP = this;
     window.APP = this;
-    return { APP };
+    return {APP};
   },
   data() {
     const navOrders = ["chat", "friends", "application", "contact"];
     const actions = [
-      { text: "选项一" },
-      { text: "选项二" },
-      { text: "选项三" },
+      {text: "选项一"},
+      {text: "选项二"},
+      {text: "选项三"},
     ];
     return {
+      currentView: '',
+      state: {},
+      currentNavHeader: "AppNav",
       viewComponents,
       viewTitle: "WiiChat",
       currentActiveNavItem: navOrders[0],
@@ -123,11 +133,31 @@ export default {
     this.onLoad();
   },
   watch: {
-    "$route.query"(query) {
-      console.log("🚀 ~ file: AppMobile.vue ~ line 46 ~ query", query);
+    "$route.query": {
+      immediate: true,
+      handler(query) {
+        this.setCurrentNavHeaderByQuery(query);
+        this.setCurrentView(query);
+      },
     },
   },
   methods: {
+    routePush() {
+
+    },
+    routeBack() {
+
+    },
+    setCurrentView(query) {
+      this.currentView = query.currentView;
+    },
+    setCurrentNavHeaderByQuery(query) {
+      this.currentNavHeader = "default";
+      const {view, isShowDetail} = query;
+      if (view === "ViewChat" && isShowDetail === "true") {
+        this.currentNavHeader = "ViewChatNavHeader";
+      }
+    },
     switchMainView,
     getBGImg(item) {
       return {
@@ -159,8 +189,8 @@ export default {
     },
     handleClick(type) {
       console.log(
-        "🚀 ~ file: AppMobile.vue ~ line 68 ~ handleClick ~ type",
-        type
+          "🚀 ~ file: AppMobile.vue ~ line 68 ~ handleClick ~ type",
+          type
       );
     },
   },
@@ -189,6 +219,7 @@ export default {
   .main-view {
     height: 0;
     flex: 1;
+
     .container {
       background: #9e9e9e38;
       height: 100%;

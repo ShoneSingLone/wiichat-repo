@@ -2,12 +2,13 @@
   "name": "@ventose/chat",
   "version": "0.0.0",
   "scripts": {
-    "start": "vite --host",
+    "start": "vite --host --open",
     "build": "vite build",
     "serve": "vite preview"
   },
   "dependencies": {
     "alloyfinger": "^0.1.16",
+    "lodash": "^4.17.21",
     "vant": "^3.1.5",
     "vue": "^3.0.5",
     "vue-mocropper": "^2.0.0",
