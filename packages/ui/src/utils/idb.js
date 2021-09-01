@@ -1,5 +1,5 @@
-import { get, set } from 'idb-keyval';
+import { get, set } from "idb-keyval";
 
 export const getAntd = () => {
     
-}
+};

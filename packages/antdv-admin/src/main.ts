@@ -1,9 +1,11 @@
-import { createApp } from "vue";
+import {createApp} from "vue";
 import AppAdmin from "./AppAdmin.vue";
+import myui from "@ventose/ui";
 // import myui from "@ventose/ui/dist/ui.es";
-import myui from "@ventose/ui/src";
 import "@ventose/ui/dist/style.css";
+import {setAppI18n} from "./language/language";
 
 const app_admin = createApp(AppAdmin);
-app_admin.use(myui, {mount:"#app"});
+setAppI18n(app_admin);
+app_admin.use(myui, {mount: "#app"});
 app_admin.mount("#app");

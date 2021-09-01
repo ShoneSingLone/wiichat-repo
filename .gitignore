@@ -24,3 +24,7 @@ pnpm-debug.log*
 lerna-debug.log
 packages/admin/dist
 packages/ui/dist
+packages/demo_lib/dist
+packages/demo_lib/package-lock.json
+packages/layer/dist
+packages/lib_layer/dist
