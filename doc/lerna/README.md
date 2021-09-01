@@ -37,6 +37,7 @@ lerna init
 ```js
 export const routes: Array<RouteRecordRaw> = [
       ...
+      ...
   {
     path: '/ui',
     name: 'ui',
