@@ -28,3 +28,7 @@ packages/demo_lib/dist
 packages/demo_lib/package-lock.json
 packages/layer/dist
 packages/lib_layer/dist
+packages/ui/dist_old/favicon.ico
+packages/ui/dist_old/style.css
+packages/ui/dist_old/ui.es.js
+packages/ui/dist_old/ui.umd.js

@@ -1,8 +1,0 @@
-{
-  "name": "@ventose/demo",
-  "private": false,
-  "scripts": {
-    "test:unit": "node canary.js"
-  },
-  "version": "0.0.1"
-}

@@ -6,13 +6,15 @@ import HW from "./components/HelloWorld.vue";
 import _ from "lodash";
 import button from "./views/Button.vue";
 import ViewForm from "./views/form/index.vue";
+import ViewTabs from "./views/tabs/index.vue";
 
 const routeObj = {
 	ViewForm,
 	button: button,
-	hello: HW
+	hello: HW,
+	ViewTabs
 };
-console.log("🚀 ~ file: router.js ~ line 11 ~ routeObj", routeObj);
+
 
 export const routes = _.map(routeObj, (component, name) => ({
 	path: `/${name}`,

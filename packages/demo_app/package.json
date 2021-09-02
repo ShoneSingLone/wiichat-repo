@@ -1,8 +1,20 @@
 {
   "name": "@ventose/demo_app",
   "private": false,
+  "version": "0.0.0",
   "scripts": {
-    "test:unit": "node canary.js"
+    "start": "vite --host",
+    "build": "vite build",
+    "serve": "vite preview --host"
   },
-  "version": "0.0.1"
+  "dependencies": {
+    "vue": "^3.0.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.3",
+    "@vitejs/plugin-vue-jsx": "^1.1.5",
+    "@vue/compiler-sfc": "^3.0.5",
+    "sass": "^1.35.1",
+    "vite": "^2.5.3"
+  }
 }

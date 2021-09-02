@@ -1,7 +1,7 @@
 //index.ts
-import {createI18n} from "vue-i18n"; //引入vue-i18n组件
+import { createI18n } from "vue-i18n"; //引入vue-i18n组件
 //引入同级目录下文件
-const modules = import.meta.globEager("./*");
+const modules = (import.meta as any).globEager("./*");
 
 //假设你还有其他目录下的语言文件 它的路径是 src/views/home/locales/en-US.ts
 //那么你就可以 使用 :lower:（小写） :upper:（大写） 来引入文件
@@ -46,9 +46,11 @@ const i18n = createI18n({
 	messages: getLangAll(),
 });
 
-export const setAppI18n = (app: any) => {
-	app.config.globalProperties.$t = i18n.global.t;
+export const appI18n = {
+	install: (app: any) => {
+		app.config.globalProperties.$t = i18n.global.t;
+	},
 };
-
 export default i18n; //将i18n暴露出去，在main.js中引入挂载
 export const $t = i18n.global.t;
+export const defaultLang = "zh-CN";

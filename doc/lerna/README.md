@@ -33,7 +33,7 @@ lerna init
 - `init -y init`注意`main`对应的文件
 - `lerna add @ventose/ui --scope=@ventose/antdv-admin` 类似 `yarn add`动态链接lib，不走仓库 --scope即安装到 @ventose/wiichat
 - `lerna bootstrap --hoist`类似 `npm i`;`hoist`将各个package里面公用的lib提到最外层的`node_modules`里面
-- `npm install --save-dev lerna-update-wizard`将整理可升级的lib
+- `npm install --save-dev lerna-update-wizard`整理可升级的lib
 
 ```js
 export const routes: Array<RouteRecordRaw> = [
