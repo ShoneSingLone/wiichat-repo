@@ -2,16 +2,12 @@
   "name": "wiichat",
   "private": true,
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.15.0",
-    "@typescript-eslint/parser": "^4.15.0",
-    "eslint": "^7.19.0",
-    "eslint-plugin-vue": "^7.5.0",
     "lerna": "^3.22.1",
     "lerna-update-wizard": "^0.17.8"
   },
-  "npmClient": "npm",
+  "npmClient": "cnpm",
   "scripts": {
-    "bs": "lerna bootstrap --hoist",
+    "bs": "lerna bootstrap",
     "dev:music-player": "lerna run dev --scope=@ventose/music-player",
     "dev:admin": "lerna run dev --scope=@ventose/admin",
     "dev:wiichat": "lerna run dev --scope=@ventose/wiichat",

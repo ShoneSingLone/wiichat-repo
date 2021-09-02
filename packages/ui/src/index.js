@@ -1,7 +1,7 @@
 // import './bs/scss/bootstrap.scss';
-import xBtn from "./components/button/index";
+import xBtn from "./components/button/index.jsx";
 import xIcon from "./components/icon/index.vue";
-import xFormItem from "./components/form/items/xFormItem";
+import xFormItem from "./components/form/items/xFormItem.tsx";
 import xRipple, {
 	installXRippleToBody
 } from "./components/Ripple/index.vue";
@@ -14,9 +14,7 @@ import "ant-design-vue/dist/antd.css";
 import antdv from "ant-design-vue";
 
 import "./styles/common.scss";
-import {
-	defineItem
-} from "./components/form/xForm.define";
+import { defineItem } from "./components/form/xForm.define.tsx";
 
 const componentList = [xBtn, xIcon, xFormItem];
 

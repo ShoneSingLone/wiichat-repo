@@ -1,6 +1,7 @@
 {
   "name": "@ventose/music-player",
   "version": "0.0.0",
+  "main": "./src/build-main.js",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",

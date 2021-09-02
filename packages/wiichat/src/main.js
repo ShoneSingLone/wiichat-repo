@@ -7,7 +7,7 @@ import router from './router'
 import {
     store
 } from './store'
-import myui from "@ventose/ui";
+import myui from "@ventose/ui/dist/ui.es";
 
 const app = createApp(App);
 

@@ -1,9 +1,8 @@
 import {
     createStore
 } from 'vuex'
-import {
-    windowOnResize
-} from "@ventose/ui";
+import { windowOnResize } from "@ventose/ui/dist/ui.es";
+
 
 
 export const store = createStore({
