@@ -1,12 +1,14 @@
 import { defineComponent, reactive } from "vue";
 import { v4 as uuid } from "uuid";
 import _ from "lodash";
-import { ITEM_TYPE } from "../../../utils/types";
+import { ITEM_TYPE, i_form_item, t_item_render } from "../xForm.define";
 import { renderInput } from "./itemRenders/input";
 import { renderSelect } from "./itemRenders/select";
+import { renderRadioGroup } from "./itemRenders/radioGroup";
 
 export default defineComponent({
-  name: "FormItem",
+  name: "xFormItem",
+  emits: ["update:value", "change"],
   props: {
     /* v-model:vlaue的值 */
     value: {
@@ -23,7 +25,7 @@ export default defineComponent({
       },
     },
   },
-  setup(props, context) {
+  setup(props: any, context) {
     /* 创建的时候计算一次 */
     const { emit } = context;
     const id = `x-form-item_${uuid()}`;
@@ -40,14 +42,22 @@ export default defineComponent({
         /* 一般属性 */
         ..._.merge({ id }, attrs, configsAttrs),
         /* v-model:value */
+        class: "x-form-item",
         value: props.value,
-        "onUpdate:value": (e) => emit("update:value", e),
+        "onUpdate:value": (e) => {
+          emit("change", e);
+        },
       };
       const setOptionsParams = { state, props, emit };
       /*根据类型返回不同的组件*/
-      const component_map = {
-        [ITEM_TYPE.input]: () => renderInput(properties),
-        [ITEM_TYPE.select]: () => renderSelect(setOptionsParams, properties),
+      const component_map: i_form_item<t_item_render> = {
+        input: () => renderInput(properties),
+        select: () => renderSelect(setOptionsParams, properties),
+        radioGroup: () => renderRadioGroup(setOptionsParams, properties),
+        render: undefined,
+        number: undefined,
+        switch: undefined,
+        textarea: undefined,
       };
 
       return (

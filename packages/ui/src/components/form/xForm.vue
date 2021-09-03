@@ -1,5 +1,5 @@
 <template>
-  <el-form
+  <aForm
     ref="form"
     class="x-form-wrapper"
     :model="forms"
@@ -11,11 +11,11 @@
       class="x-component-form_item-wrapper grid gap16"
       :style="itemWrapperStyle"
     >
-      <el-form-item
+      <aFormItem
         v-for="prop in itemsOrder"
         :key="prop"
         :prop="prop"
-        :style="items[prop] | itemStyle"
+        :style="items[prop] && itemStyle(items[prop])"
       >
         <xFormLabel
           v-if="items[prop].label"
@@ -23,47 +23,24 @@
           :width="labelWidth"
           :configs="items[prop]"
         />
-        <GhFormItem
-          v-model="forms[prop]"
+        <xFormItem
+          :value="forms[prop]"
           :configs="items[prop]"
           @change="handleFormItemChange($event, prop)"
         />
-      </el-form-item>
+      </aFormItem>
     </div>
-  </el-form>
+  </aForm>
 </template>
 
 <script>
-//@ts-nocheck
-
 import _ from "lodash";
 import { xFormLabel } from "./xForm.Label";
 
-
 export default {
-  name: "GhForm",
-  components: {
-    xFormLabel,
-  },
-  filters: {
-    itemStyle(item) {
-      const style = {};
-      if (item.col) {
-        style.gridColumnStart = `span ${item.col}`;
-      }
-      if (item.row) {
-        style.gridRowStart = `span ${item.row}`;
-      }
-      /* offset */
-      if (item.colOffet) {
-        style.gridColumn = item.colOffet;
-      }
-      if (item.rowOffet) {
-        style.gridRow = item.rowOffet;
-      }
-      return style;
-    },
-  },
+  name: "xForm",
+  emits: ["update:configs", "update:form-change", "change"],
+  components: { xFormLabel },
   props: {
     configs: {
       type: Object,
@@ -158,16 +135,31 @@ export default {
     this.configs.$validate = () => this.validate();
   },
   methods: {
-    handleFormItemChange(val, prop) {
-      if (_.isPlainObject(this.configs.form)) {
-        delete this.configs.form[prop];
-      } else {
-        this.$set(this.configs, "form", {});
+    itemStyle(item) {
+      const style = {};
+      if (item.col) {
+        style.gridColumnStart = `span ${item.col}`;
       }
-      this.$set(this.configs.form, prop, val);
-      this.$emit("form-change", this.form, { prop, val });
-      this.configs?.handleFormChange?.(this.form, { prop, val });
+      if (item.row) {
+        style.gridRowStart = `span ${item.row}`;
+      }
+      /* offset */
+      if (item.colOffet) {
+        style.gridColumn = item.colOffet;
+      }
+      if (item.rowOffet) {
+        style.gridRow = item.rowOffet;
+      }
+      return style;
+    },
+    handleFormItemChange(val, prop) {
+      if (!_.isPlainObject(this.configs.form)) {
+        this.configs.form = {};
+      }
+      this.configs.form[prop] = val;
+      this.$emit("update:form-change", this.form, { prop, val });
       this.$emit("change", this.configs);
+      this.$emit("update:configs", this.configs);
     },
   },
 };
@@ -176,38 +168,42 @@ export default {
 <style lang="scss">
 .x-form-wrapper {
   .x-component-form_item-wrapper {
-    .el-form-item {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: center;
-      align-items: center;
-
-      .el-form-item__label + .el-form-item__content {
-        margin-left: 0 !important;
-      }
-
-      .el-form-item__content {
-        flex: 1;
-        display: flex;
-
-        > label {
-          .form-label-required {
-            margin: auto;
-            color: transparent;
-            margin-right: 4px;
-          }
-        }
-
+    .ant-form-item-control {
+      > div {
         > div {
-          flex: 1;
-        }
-      }
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: center;
+          align-items: center;
 
-      &.is-required {
-        .el-form-item__content {
-          > label {
-            .form-label-required {
-              color: #f56c6c;
+          .a-form-item__label + .a-form-item__content {
+            margin-left: 0 !important;
+          }
+
+          .x-form-item {
+            flex: 1;
+            display: flex;
+
+            > label {
+              .form-label-required {
+                margin: auto;
+                color: transparent;
+                margin-right: 4px;
+              }
+            }
+
+            > div {
+              flex: 1;
+            }
+          }
+
+          &.is-required {
+            .a-form-item__content {
+              > label {
+                .form-label-required {
+                  color: #f56c6c;
+                }
+              }
             }
           }
         }

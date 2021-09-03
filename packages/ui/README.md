@@ -1,5 +1,5 @@
 
-- [antdv](https://2x.antdv.com/components/form)
+- [antdv](https://2x.antdv.com/componenst/form)
 
 - setThemeColor : 移动端 手机浏览器 bar的颜色
 
