@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body class="ripple">
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ant-design-vue@2.2.7/dist/antd.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+</head>
+
+<body class="ripple">
+  <div id="app"></div>
+  <script defer src="https://unpkg.com/vue@3"></script>
+  <script defer src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <script defer src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <script defer> window.moment = window.dayjs; </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/ant-design-vue@2.2.7/dist/antd.js"></script>
+  <script defer type="module" src="/src/main.js"></script>
+</body>
+
 </html>
