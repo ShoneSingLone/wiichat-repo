@@ -1,33 +1,9 @@
 <template>
-  <aForm
-    ref="form"
-    class="x-form-wrapper"
-    :model="forms"
-    :rules="rules"
-    :label-width="labelWidth"
-    :label-position="'right'"
-  >
-    <div
-      class="x-component-form_item-wrapper grid gap16"
-      :style="itemWrapperStyle"
-    >
-      <aFormItem
-        v-for="prop in itemsOrder"
-        :key="prop"
-        :prop="prop"
-        :style="items[prop] && itemStyle(items[prop])"
-      >
-        <xFormLabel
-          v-if="items[prop].label"
-          :label="items[prop].label"
-          :width="labelWidth"
-          :configs="items[prop]"
-        />
-        <xFormItem
-          :value="forms[prop]"
-          :configs="items[prop]"
-          @change="handleFormItemChange($event, prop)"
-        />
+  <aForm ref="form" class="x-form-wrapper" :model="forms" :rules="rules" :label-width="labelWidth" :label-position="'right'" >
+    <div class="x-component-form_item-wrapper grid gap16" :style="itemWrapperStyle" >
+      <aFormItem v-for="prop in itemsOrder" :key="prop" :prop="prop" :style="items[prop] && itemStyle(items[prop])" >
+        <xFormLabel v-if="items[prop].label" :label="items[prop].label" :width="labelWidth" :configs="items[prop]" />
+        <xFormItem :value="forms[prop]" :configs="items[prop]" @change="handleFormItemChange($event, prop)" />
       </aFormItem>
     </div>
   </aForm>
@@ -123,6 +99,7 @@ export default {
   watch: {
     configs: {
       handler(newVal) {
+        newVal = newVal || {};
         this.forms = {
           ...newVal["form"],
         };

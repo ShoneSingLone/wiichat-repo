@@ -7,7 +7,5 @@ import { router } from "./router.js";
 
 createApp(AppUI)
 	.use(router)
-	.use(myui, {
-		mount: "#app"
-	})
+	.use(myui, { mount: "#app" })
 	.mount("#app");
